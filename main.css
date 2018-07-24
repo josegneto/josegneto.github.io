@@ -7,7 +7,7 @@
   }
 
   
-  .Sigarra, .Links {
+  .Sigarra {
     text-align:center;
     display:block;   
   }
@@ -23,12 +23,16 @@
     border:1px solid black;
   }
 
-  .Links{
+  .Links {
+    text-align:center;
     display: grid;
+    grid-template-rows: repeat(3, 50px); 
   }
 
-  .Mail{
-    padding-left:50em;
+  .Mail {
+    font-size: 12px;
+
   }
 
-
+ /* a img { display:none; }
+  a:hover img { display:block; }*/
