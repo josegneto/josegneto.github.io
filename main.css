@@ -7,11 +7,28 @@
   }
 
   
-  .Sigarra {
+  .Sigarra, .Links {
     text-align:center;
-    display:block;
+    display:block;   
   }
+
   .Sigarrapag {
+    margin:5px;
     text-align:center;
     display:block;
+    font-size: 12px;
   }
+
+  .foto1 {
+    border:1px solid black;
+  }
+
+  .Links{
+    display: grid;
+  }
+
+  .Mail{
+    padding-left:50em;
+  }
+
+
