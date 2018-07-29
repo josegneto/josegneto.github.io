@@ -1,4 +1,3 @@
-  
   h1 {
     font-family: "Calibri";
     font-weight: 700;
@@ -36,8 +35,8 @@
 
 
 
-  1
-   body {
+NAV
+  body {
     margin: 0;
     padding: 0;
     background: #ccc;
@@ -45,13 +44,13 @@
   
   .nav ul {
     list-style: none;
-    background-color: black;
+    background-color: #8c2d19;
     padding: 0;
     margin: 0;
   }
   
   .nav li {
-    font-family: 'Oswald', sans-serif;
+    font-family: "Calibri";
     font-size: 1.2em;
     line-height: 40px;
     text-align: left;
@@ -67,7 +66,7 @@
   }
   
   .nav a:hover   {
-    background-color: #8c2d19;
+    background-color: #005f5f;
   }
 
   .nav a.active:hover  {
@@ -79,6 +78,19 @@
     color: #fff;
     cursor: default;
   }
+
+  .nav a.cvx {
+    background-color: #8c2d19;
+    color: #fff;
+    cursor: default;
+  }
+
+  .nav a.cvx:hover {
+    background-color: #005f5f;
+    color: #fff;
+    cursor: default;
+  }
+
   
   /* Sub Menus */
   .nav li li {
@@ -94,7 +106,7 @@
   
   @media screen and (min-width: 650px) {
     .nav li {
-      width: 130px;
+      width: 90px;
       border-bottom: none;
       height: 50px;
       line-height: 50px;
@@ -129,4 +141,3 @@
     .nav li ul li {
       display: block;
     }
-  }
