@@ -1,11 +1,11 @@
-  h1 {
+  h1.h1 {
     font-family: "Calibri";
     font-weight: 700;
     text-align: center;
     margin:20px;
   }
 
-  .lcontactos p, .projetos p, .ardproj p{
+  .lcontactos p, .projetos p, .ardproj p, .lindex{
     text-align: justify;
     padding: 15px;
 
@@ -14,8 +14,14 @@
   }
 
   
-  .icontactos{
-    color:red;
+  .icones{
+    text-align: center;
+    font-size: 3em; 
+  
+
+  }
+  .icones i{
+    color:black;
   }
   
   .Sigarra {
@@ -128,20 +134,19 @@
 
   .footer-distributed{
     background-color: white;
-    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
     box-sizing: border-box;
     width: 100%;
     font: normal 16px sans-serif;
     
     padding: 45px 50px;
-    margin-top: 80px;
+    margin-top: 10px;
 
     position: fixed;
     bottom: 0;
   }
     
   .footer-distributed .footer-copy p{
-    color:  #8f9296;
+    color:  black;
     font-size: 14px;
     margin: 0;
     text-align: right;
@@ -159,7 +164,7 @@
     display: inline-block;
     width: 35px;
     height: 35px;
-    background-color:  #33383b;
+    background-color:  black;
     border-radius: 2px;
     
     font-size: 20px;
