@@ -1,10 +1,22 @@
   h1 {
-    font-family: "Helvetica";
+    font-family: "Calibri";
     font-weight: 700;
     text-align: center;
     margin:20px;
   }
 
+  .lcontactos p, .projetos p, .ardproj p{
+    text-align: justify;
+    padding: 15px;
+
+    font-family: "Calibri";
+    font-size: 1.2em;
+  }
+
+  
+  .icontactos{
+    color:red;
+  }
   
   .Sigarra {
     text-align:center;
@@ -49,15 +61,10 @@
     display: block;
     padding-left: 15px;
     border-bottom: 1px solid #888;
-    transition: .3s background-color;
-  }
-  
-  .nav a:hover   {
-    background-color: #005f5f;
   }
 
   .nav a.active:hover  {
-    background-color: #005f5f;
+    background-color: black;
   }
   
   .nav a.active {
