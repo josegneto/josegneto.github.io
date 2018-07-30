@@ -79,17 +79,7 @@ NAV
     cursor: default;
   }
 
-  .nav a.cvx {
-    background-color: #8c2d19;
-    color: #fff;
-    cursor: default;
-  }
-
-  .nav a.cvx:hover {
-    background-color: #005f5f;
-    color: #fff;
-    cursor: default;
-  }
+  
 
   
   /* Sub Menus */
@@ -105,30 +95,17 @@ NAV
   ********************************************/
   @media screen and (min-width: 650px) {
     .nav li {
-      width: 130px;
       width: 90px;
-      border-bottom: none;
-      height: 50px;
-      line-height: 50px;
+    border-bottom: none;
+    height: 50px;
+    line-height: 50px;
+    font-size: 1.4em;
+    display: inline-block;
+    margin-right: -4px;
     }
   
-    .nav li ul li {
-      display: block;
-    }
-  }
+    
 
-  @media screen and (min-width: 650px) {
-    .nav li {
-      width: 90px;
-      border-bottom: none;
-      height: 50px;
-      line-height: 50px;
-      font-size: 1.4em;
-      display: inline-block;
-      margin-right: -4px;
-    }
-  }
-  
     .nav a {
       border-bottom: none;
     }
@@ -155,7 +132,7 @@ NAV
     .nav li ul li {
       display: block;
     }
-
+  }
 
     
     
