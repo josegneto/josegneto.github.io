@@ -137,24 +137,23 @@
     width: 100%;
     font: normal 16px sans-serif;
     
-    padding: 10px 15px;
+    padding: 5px 5px;
     
 
-    position: fixed;
     bottom: 0;
   }
     
-  .footer-distributed .footer-copy p{
+  .footer-distributed .footer-copy{
     color:  black;
     font-size: 14px;
     margin: 0;
-    text-align: right;
-    margin-top: 3px;
+    text-align: left;
+    margin-top: 5px;
   }
     
   /* Footer links */
-  .footer-distributed .footer-icons{
-    float: right;
+  .footer-distributed .footer-icons {
+    margin-top: 6px;
     max-width: 180px;
   }
     
@@ -176,7 +175,7 @@
     
   @media (max-width: 600px) {
     
-    .footer-distributed .footer-copy,
+    .footer-distributed .footer-copy p,
     .footer-distributed .footer-icons{
       text-align: center;
     }
