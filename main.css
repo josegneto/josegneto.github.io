@@ -2,6 +2,14 @@
   text-align:center;
  }
 
+ hr.style1 {
+  border-color: blue;
+  background-color: red;
+  height: 1px;
+  border-width: 1px;
+  border-style: solid;
+}
+
  figcaption{
   font-weight: 700;
 
