@@ -1,0 +1,99 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD><TITLE>Brought To You By CToHTML</TITLE>
+<STYLE type=text/css>
+body {
+    background-color: white
+     }
+CODE {
+	FONT-SIZE: 14px; 
+	FONT-FAMILY: fixed
+     }
+CODE.keyword {
+	COLOR: blue
+     }
+CODE.comment {
+	COLOR: green
+     }
+</STYLE>
+</HEAD>
+<BODY>
+<PRE><CODE><code class="comment">/*----------------------------------------------------------------*/
+/* This file can be saved to your machine (almost) as you see it  */
+/* by doing a "Save As..." from the File menu of your browser.    */
+/*                                                                */
+/* For this to work, you must TYPE a filename with .txt as the    */
+/* file extent.  (Simply selecting .txt as the file type          */
+/* doesn't seem to be sufficient.)  Remove the .txt extension     */
+/* once the file is saved.  (IE inserts the page title as the     */
+/* first line, which must be removed also.)                       */
+/*----------------------------------------------------------------*/
+</code>
+<code class="keyword">#include</code> &lt;IRLibAll.h&gt;
+<code class="keyword">#include</code> &lt;Servo.h&gt; 
+
+<code class="comment">// You will have to set these values depending on the protocol
+</code><code class="comment">// and remote codes that you are using. These are For the Adafruit
+</code><code class="comment">// Mini Remote
+</code><code class="keyword">#define</code> MY_PROTOCOL NEC
+<code class="keyword">#define</code> RIGHT_ARROW   0x1FE40BF <code class="comment">//Move several clockwise
+</code><code class="keyword">#define</code> LEFT_ARROW    0x1FE807F <code class="comment">//Move servo counterclockwise
+</code><code class="keyword">#define</code> SELECT_BUTTON 0x1FE609F <code class="comment">//Center the servo 
+</code><code class="keyword">#define</code> UP_ARROW      0x1FEA05F <code class="comment">//Increased number of degrees servo moves
+</code><code class="keyword">#define</code> DOWN_ARROW    0x1FE20DF <code class="comment">//Decrease number of degrees servo moves
+</code><code class="keyword">#define</code> BUTTON_0 0x1FEE01F  <code class="comment">//Pushing buttons 0-9 moves to fixed positions
+</code><code class="keyword">#define</code> BUTTON_1 0x1FE50AF  <code class="comment">// each 20 degrees greater
+</code><code class="keyword">#define</code> BUTTON_2 0x1FED827
+<code class="keyword">#define</code> BUTTON_3 0x1FEF807
+<code class="keyword">#define</code> BUTTON_4 0x1FE30CF
+<code class="keyword">#define</code> BUTTON_5 0x1FEB04F
+<code class="keyword">#define</code> BUTTON_6 0x1FE708F
+<code class="keyword">#define</code> BUTTON_7 0x1FE00FF
+<code class="keyword">#define</code> BUTTON_8 0x1FEF00F
+<code class="keyword">#define</code> BUTTON_9 0x1FE9867
+
+IRrecv myReceiver(2); <code class="comment">//pin number for the receiver
+</code>IRdecode myDecoder;
+
+Servo myServo;  <code class="comment">// create servo object to control a servo 
+</code>int16_t pos;         <code class="comment">// variable to store the servo position 
+</code>int16_t Speed;       <code class="comment">// Number of degrees to move each time a left/right button is pressed
+</code>uint32_t Previous;<code class="comment">//handles NEC repeat codes
+</code>
+<code class="keyword">void</code> setup() { 
+  myServo.attach(9);      <code class="comment">// attaches the servo on pin 9 to the servo object 
+</code>  pos = 90;               <code class="comment">// start at midpoint 90 degrees
+</code>  Speed = 3;              <code class="comment">// servo moves 3 degrees each time left/right is pushed
+</code>  myServo.write(pos);     <code class="comment">// Set initial position
+</code>  myReceiver.enableIRIn(); <code class="comment">// Start the receiver
+</code>} 
+  
+<code class="keyword">void</code> loop() 
+{ 
+    <code class="keyword">if</code> (myReceiver.getResults()) {
+       myDecoder.decode();
+       <code class="keyword">if</code>(myDecoder.protocolNum==MY_PROTOCOL) {
+         <code class="keyword">if</code>(myDecoder.value==0xFFFFFFFF)
+           myDecoder.value=Previous;
+         <code class="keyword">switch</code>(myDecoder.value) {
+            <code class="keyword">case</code> LEFT_ARROW:    pos=min(180,pos+Speed); <code class="keyword">break</code>;
+            <code class="keyword">case</code> RIGHT_ARROW:   pos=max(0,pos-Speed); <code class="keyword">break</code>;
+            <code class="keyword">case</code> SELECT_BUTTON: pos=90; <code class="keyword">break</code>;
+            <code class="keyword">case</code> UP_ARROW:      Speed=min(10, Speed+1); <code class="keyword">break</code>;
+            <code class="keyword">case</code> DOWN_ARROW:    Speed=max(1, Speed-1); <code class="keyword">break</code>;
+            <code class="keyword">case</code> BUTTON_0:      pos=0*20; <code class="keyword">break</code>;
+            <code class="keyword">case</code> BUTTON_1:      pos=1*20; <code class="keyword">break</code>;
+            <code class="keyword">case</code> BUTTON_2:      pos=2*20; <code class="keyword">break</code>;
+            <code class="keyword">case</code> BUTTON_3:      pos=3*20; <code class="keyword">break</code>;
+            <code class="keyword">case</code> BUTTON_4:      pos=4*20; <code class="keyword">break</code>;
+            <code class="keyword">case</code> BUTTON_5:      pos=5*20; <code class="keyword">break</code>;
+            <code class="keyword">case</code> BUTTON_6:      pos=6*20; <code class="keyword">break</code>;
+            <code class="keyword">case</code> BUTTON_7:      pos=7*20; <code class="keyword">break</code>;
+            <code class="keyword">case</code> BUTTON_8:      pos=8*20; <code class="keyword">break</code>;
+            <code class="keyword">case</code> BUTTON_9:      pos=9*20; <code class="keyword">break</code>;
+         }
+         myServo.write(pos); <code class="comment">// tell servo to go to position in variable 'pos' 
+</code>         Previous=myDecoder.value;
+       }
+       myReceiver.enableIRIn();
+    }
+}
