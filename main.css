@@ -1,4 +1,20 @@
- 
+ .codigo{
+  text-align:center;
+ }
+
+ btn.btn-primary {
+  border-radius: 2px;
+  border: 0px;
+  color: #fbd1d5;
+  text-shadow: none;
+  background-color: #8c2d19;
+}
+
+.btn.btn-primary:hover {
+  color: #ffffff;
+  background-color: black;
+}
+
   h1.h1 {
     font-family: "Calibri";
     font-weight: 700;
