@@ -57,40 +57,41 @@
 
 
     <div class="proj">
-        <p style="font-weight: 700; font-size: 2em">Índice</p>
+        <p style="font-weight: 700; font-size: 23px">Índice</p>
         
         <ol>
             <li><a href="#Material">Material</a></li>
-            <li><a href="#Descodificação do comando">Descodificação do comando</a></li>
+            <li ><a href="#Descodificação do comando">Descodificação do comando</a></li>
             <ul>
-                <li><a href="#Montagemdes">Montagem</a></li>
-                <li><a href="Codigodes">Código</a></li>
-              </ul>
-            <li><a href="#Servo">Servo</a>
+                <li><a href="#montagemdes">Montagem</a></li>
+                <li><a href="#codigodes">Código</a></li>
+            </ul>
+            <li><a href="#servo">Servo</a>
               <ul>
-                <li><a href="#codigodes">Montagem</a></li>
-                <li><a href="#Código">Código</a></li>
+                <li><a href="#montagemservo">Montagem</a></li>
+                <li><a href="#codigoservo">Código</a></li>
               </ul>
             </li>
             </ol>
         <br>
         <br>
-        <p id="Material" style="font-weight: 700; font-size: 2em">Material</p>
+        <p id="Material" style="font-weight: 700; font-size: 23px; color: #8c2d19">1. Material</p>
         
-        <u1>
+        <div class="materiais">
+        <ul>
           <li><a href="IR.png" title="Recetor IR e comando" target="_blank">Recetor IR e comando</a></li>
           <li><a href="servo.jpg" title="Servo" target="_blank">Motor Servo</a></li>
           <li><a href="breademini.png" title="Breadboard e mini" target="_blank">Breadboard e mini</a></li>
           <li><a href="cabos.jpg" title="Fios" target="_blank">Fios</a></li>
 
-        </u1>
-
+        </ul>
+</div>
         <br>
 
-        <p id="Descodificação do comando"style="font-weight: 700; font-size: 2em">Descodificação do comando</p>
+        <p id="Descodificação do comando"style="font-weight: 700; font-size: 23px; color:#8c2d19">2. Descodificação do comando</p>
 
 
-            <p id="Montagemdes" style="font-weight: 700; padding-left:2em; font-size: 2em">Montagem</p>
+            <p id="montagemdes" style="font-weight: 700; padding-left:2em; font-size: 21px">Montagem</p>
 
             <p style="padding-left: 6em">Inicialmente temos de descodificar as teclas do comando, pois para cada comando teremos um conjunto de códigos diferentes.</p>
       
@@ -99,16 +100,17 @@
               <figcaption><i>Montagem para descodificar o comando</i></figcaption>
             </div>
 
-            <p id="Codigodes" style="font-weight: 700; padding-left:2em; font-size: 2em">Código</p>
-            
-            <button onclick="mostra1()">Mostrare/Esconder código</button>
+            <p id="codigodes" style="font-weight: 700; padding-left:2em; font-size: 21px">Código</p>
+            <div style ="padding-left: 6em" class="botao">
+            <button onclick="mostra1()">Mostrar/Esconder código</button>
+            </div>
             <br>
             
       
             <div id="codigo1">
-      
+
               <div class ="codigo">
-                  <object data="servo_IR/teste3.html" type="text/octet-stream" width="700" style="height: 300px"></object>
+                  <iframe src="IR_decoder/IR_decoder.html" type="text/octet-stream" width="700" style="height: 300px   "></iframe>
                   
                 </div>
       
@@ -122,29 +124,32 @@
             </div>
         
             
-        <p id="Codigos"style="font-weight: 700; font-size: 2em">Código</p>
+        <p id="servo"style="text-align: center; font-weight: 700; font-size: 23px; color:#8c2d19">3. Servo</p>
 
-        <p id="codigodes" style="font-weight: 700; padding-left:2em; font-size: 2em">Descodificação do comando</p>
+        <p id="montagemservo" style="font-weight: 700; padding-left:2em; font-size: 21px">Montagem</p>
+        <p style="padding-left: 6em">Inicialmente temos de descodificar as teclas do comando, pois para cada comando teremos um conjunto de códigos diferentes.</p>
+
       
+        <p id="codigoservo" style="font-weight: 700; padding-left:2em; font-size: 21px">Código</p>
+
+        <div style ="padding-left: 6em" class="botao">
+            <button onclick="mostra2()">Mostrar/Esconder código</button>
+        </div>
       
-      
-      <br><br><button onclick="mostra2()">Mostrar/Esconder código</button>
-      <div class ="box1">
-      <div id ="codigo2">
-        
+      <div id="codigo2">
+
         <div class ="codigo">
-            <iframe src="IR_decoder/teste.html" type="text/octet-stream" width="700" style="height: 300px   "></iframe>
+            <iframe src="servo_IR/servo_IR.html" type="text/octet-stream" width="700" style="height: 300px   "></iframe>
           </div>
 
         <div class ="icones">
-          <a href="servo_IR.ino" title="servo_IR.ino" target="_blank"><i class="fas fa-file-download" aria-hidden="true" alt="servo_IR.ino"></i></a>
+          <a href="servo_IR/servo_IR.ino" title="servo_IR.ino" target="_blank"><i class="fas fa-file-download" aria-hidden="true" alt="servo_IR.ino"></i></a>
         </div>
     
         <div class="legenda">
           <p>Botão direito do rato sobre o ícone -> "Guardar link como..."<br>para guardar o ficheiro no seu computador</p>
         </div>
       </div>
-    </div>
   </div>
 
 

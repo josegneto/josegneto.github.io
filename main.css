@@ -1,5 +1,3 @@
-
-
 .codigo{
   text-align:center;
  }
@@ -8,6 +6,26 @@
   font-weight: 700;
 
  }
+ .proj ol li, .proj ol li a{
+  color: #8c2d19;
+  font-size: 21px;
+  font-weight: 700;
+}
+
+.proj ol ul li, .proj ol ul li a{
+  color:rgb(42, 71, 165);
+  font-size: 18px;
+ font-weight: 700;
+}
+
+.materiais ul li, .materiais ul li a{
+  color:rgb(42, 71, 165);
+  font-size: 18px;
+ font-weight: 700;
+}
+
+ 
+
 
  btn.btn-primary {
   border-radius: 2px;

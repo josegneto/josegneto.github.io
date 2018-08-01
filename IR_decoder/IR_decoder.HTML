@@ -1,48 +1,22 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
-<HTML><HEAD><TITLE>Brought To You By CToHTML</TITLE>
-<STYLE type=text/css>
-body {
-    background-color: white
-     }
-CODE {
-	FONT-SIZE: 14px; 
-	FONT-FAMILY: fixed
-     }
-CODE.keyword {
-	COLOR: blue
-     }
-CODE.comment {
-	COLOR: green
-     }
-</STYLE>
-</HEAD>
-<BODY>
-<PRE><CODE><code class="comment">/*----------------------------------------------------------------*/
-/* This file can be saved to your machine (almost) as you see it  */
-/* by doing a "Save As..." from the File menu of your browser.    */
-/*                                                                */
-/* For this to work, you must TYPE a filename with .txt as the    */
-/* file extent.  (Simply selecting .txt as the file type          */
-/* doesn't seem to be sufficient.)  Remove the .txt extension     */
-/* once the file is saved.  (IE inserts the page title as the     */
-/* first line, which must be removed also.)                       */
-/*----------------------------------------------------------------*/
-</code>
-<code class="keyword">#include</code> &lt;IRremote.h&gt;
-
-<code class="keyword">const</code> <code class="keyword">int</code> RECV_PIN = 7;
-IRrecv irrecv(RECV_PIN);
-decode_results results;
-
-<code class="keyword">void</code> setup(){
-  Serial.begin(9600);
-  irrecv.enableIRIn();
-  irrecv.blink13(true);
-}
-
-<code class="keyword">void</code> loop(){
-  <code class="keyword">if</code> (irrecv.decode(&amp;results)){
-        Serial.println(results.value, HEX);
-        irrecv.resume();
-  }
-}
+<div>
+<p style="margin-top: 0pt; margin-bottom: 0pt; line-height: 14.25pt; background-color: #ffffff;"><span style="font-family: Consolas; font-size: 10.5pt; color: #0000ff;">#include </span><span style="font-family: Consolas; font-size: 10.5pt; color: #a31515;">&lt;IRremote.h&gt;</span></p>
+<p style="margin-top: 0pt; margin-bottom: 0pt; line-height: 14.25pt; background-color: #ffffff;"><span style="font-family: Consolas; font-size: 10.5pt;">&nbsp;</span></p>
+<p style="margin-top: 0pt; margin-bottom: 0pt; line-height: 14.25pt; background-color: #ffffff;"><span style="font-family: Consolas; font-size: 10.5pt; color: #0000ff;">const</span> <span style="font-family: Consolas; font-size: 10.5pt; color: #0000ff;">int</span><span style="font-family: Consolas; font-size: 10.5pt;"> RECV_PIN = </span><span style="font-family: Consolas; font-size: 10.5pt; color: #09885a;">7</span><span style="font-family: Consolas; font-size: 10.5pt;">;</span></p>
+<p style="margin-top: 0pt; margin-bottom: 0pt; line-height: 14.25pt; background-color: #ffffff;"><span style="font-family: Consolas; font-size: 10.5pt;">IRrecv irrecv(RECV_PIN);</span></p>
+<p style="margin-top: 0pt; margin-bottom: 0pt; line-height: 14.25pt; background-color: #ffffff;"><span style="font-family: Consolas; font-size: 10.5pt;">decode_results results;</span></p>
+<p style="margin-top: 0pt; margin-bottom: 0pt; line-height: 14.25pt; background-color: #ffffff;"><span style="font-family: Consolas; font-size: 10.5pt;">&nbsp;</span></p>
+<p style="margin-top: 0pt; margin-bottom: 0pt; line-height: 14.25pt; background-color: #ffffff;"><span style="font-family: Consolas; font-size: 10.5pt; color: #0000ff;">void</span><span style="font-family: Consolas; font-size: 10.5pt;"> setup(){</span></p>
+<p style="margin-top: 0pt; margin-bottom: 0pt; line-height: 14.25pt; background-color: #ffffff;"><span style="font-family: Consolas; font-size: 10.5pt;">&nbsp; </span><span style="font-family: Consolas; font-size: 10.5pt;">Serial.begin(</span><span style="font-family: Consolas; font-size: 10.5pt; color: #09885a;">9600</span><span style="font-family: Consolas; font-size: 10.5pt;">);</span></p>
+<p style="margin-top: 0pt; margin-bottom: 0pt; line-height: 14.25pt; background-color: #ffffff;"><span style="font-family: Consolas; font-size: 10.5pt;">&nbsp; </span><span style="font-family: Consolas; font-size: 10.5pt;">irrecv.enableIRIn();</span></p>
+<p style="margin-top: 0pt; margin-bottom: 0pt; line-height: 14.25pt; background-color: #ffffff;"><span style="font-family: Consolas; font-size: 10.5pt;">&nbsp; </span><span style="font-family: Consolas; font-size: 10.5pt;">irrecv.blink13(</span><span style="font-family: Consolas; font-size: 10.5pt; color: #0000ff;">true</span><span style="font-family: Consolas; font-size: 10.5pt;">);</span></p>
+<p style="margin-top: 0pt; margin-bottom: 0pt; line-height: 14.25pt; background-color: #ffffff;"><span style="font-family: Consolas; font-size: 10.5pt;">}</span></p>
+<p style="margin-top: 0pt; margin-bottom: 0pt; line-height: 14.25pt; background-color: #ffffff;"><span style="font-family: Consolas; font-size: 10.5pt;">&nbsp;</span></p>
+<p style="margin-top: 0pt; margin-bottom: 0pt; line-height: 14.25pt; background-color: #ffffff;"><span style="font-family: Consolas; font-size: 10.5pt; color: #0000ff;">void</span><span style="font-family: Consolas; font-size: 10.5pt;"> loop(){</span></p>
+<p style="margin-top: 0pt; margin-bottom: 0pt; line-height: 14.25pt; background-color: #ffffff;"><span style="font-family: Consolas; font-size: 10.5pt;">&nbsp; </span><span style="font-family: Consolas; font-size: 10.5pt; color: #0000ff;">if</span><span style="font-family: Consolas; font-size: 10.5pt;"> (irrecv.decode(&amp;results)){</span></p>
+<p style="margin-top: 0pt; margin-bottom: 0pt; line-height: 14.25pt; background-color: #ffffff;"><span style="font-family: Consolas; font-size: 10.5pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="font-family: Consolas; font-size: 10.5pt;">Serial.println(results.value, HEX);</span></p>
+<p style="margin-top: 0pt; margin-bottom: 0pt; line-height: 14.25pt; background-color: #ffffff;"><span style="font-family: Consolas; font-size: 10.5pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="font-family: Consolas; font-size: 10.5pt;">irrecv.resume();</span></p>
+<p style="margin-top: 0pt; margin-bottom: 0pt; line-height: 14.25pt; background-color: #ffffff;"><span style="font-family: Consolas; font-size: 10.5pt;">&nbsp; </span><span style="font-family: Consolas; font-size: 10.5pt;">}</span></p>
+<p style="margin-top: 0pt; margin-bottom: 0pt; line-height: 14.25pt; background-color: #ffffff;"><span style="font-family: Consolas; font-size: 10.5pt;">}</span></p>
+<p style="margin-top: 0pt; margin-bottom: 0pt; line-height: 14.25pt; background-color: #ffffff;"><span style="font-family: Consolas; font-size: 10.5pt;">&nbsp;</span></p>
+<p style="margin-top: 0pt; margin-bottom: 8pt; line-height: 108%; font-size: 11pt;"><span style="font-family: Calibri;">&nbsp;</span></p>
+</div>
