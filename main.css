@@ -1,3 +1,4 @@
+ 
   h1.h1 {
     font-family: "Calibri";
     font-weight: 700;
@@ -5,14 +6,14 @@
     margin:20px;
   }
 
-  .lcontactos p, .projetos p, .ardproj p, .lindex{
+
+  .lcontactos p, .projetos p, .ardproj{
     text-align: justify;
-    padding: 15px;
 
     font-family: "Calibri";
-    font-size: 1.2em;
+    font-size: 1.1em;
+    padding:10px;
   }
-
   
   .icones{
     text-align: center;
@@ -33,7 +34,7 @@
     margin:5px;
     text-align:center;
     display:block;
-    font-size: 12px;
+    font-size: 11px;
   }
 
   .foto1 {
@@ -41,11 +42,6 @@
   }
 
   /*NAV BAR*/
-  body {
-    margin: 0;
-    padding: 0;
-    background: #ccc;
-  }
   
   .nav ul {
     list-style: none;
@@ -128,64 +124,6 @@
       display: block;
     }
   }
-
-
-   /*FOOTER*/
-
-  .footer-distributed{
-    background-color: white;
-    width: 100%;
-    font: normal 16px sans-serif;
-    
-    padding: 5px 5px;
-    
-
-    bottom: 0;
-  }
-    
-  .footer-distributed .footer-copy{
-    color:  black;
-    font-size: 14px;
-    margin: 0;
-    text-align: left;
-    margin-top: 5px;
-  }
-    
-  /* Footer links */
-  .footer-distributed .footer-icons {
-    margin-top: 6px;
-    max-width: 180px;
-  }
-    
-  .footer-distributed .footer-icons a{
-    display: inline-block;
-    width: 35px;
-    height: 35px;
-    background-color:  black;
-    border-radius: 2px;
-    
-    font-size: 20px;
-    color: #ffffff;
-    text-align: center;
-    line-height: 35px;
-    margin-left: 3px;
-  }
-    
-    /* If you don't want the footer to be responsive, remove these media queries */
-    
-  @media (max-width: 600px) {
-    
-    .footer-distributed .footer-copy p,
-    .footer-distributed .footer-icons{
-      text-align: center;
-    }
-    
-    .footer-distributed .footer-icons{
-      float: none;
-      margin: 0 auto 20px;
-    }
-    
-    .footer-distributed .footer-copy p.footer-links{
-      line-height: 1.8;
-    }
-  }
+  
+  
+   
