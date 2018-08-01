@@ -3,11 +3,12 @@
  }
 
  hr.style1 {
-  border-color: blue;
-  background-color: red;
-  height: 1px;
-  border-width: 1px;
-  border-style: solid;
+  border: 0;
+  height: 0; /* Firefox... */
+  box-shadow: 0 0 10px 1px black;
+}
+hr.style1:after {  /* Not really supposed to work, but does */
+  content: "\00a0";  /* Prevent margin collapse */
 }
 
  figcaption{
@@ -26,8 +27,8 @@
  font-weight: 700;
 }
 
-.materiais ul li, .materiais ul li a{
-  color:rgb(42, 71, 165);
+.materiais a{
+  color:black;
   font-size: 18px;
  font-weight: 700;
 }
