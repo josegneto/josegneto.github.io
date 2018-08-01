@@ -2,7 +2,7 @@
 <html lang="pt">
   <body>
     <head>
-      <title>Sobre mim</title>
+      <title>Projeto #1</title>
 
       <meta charset="utf-8" />
       <meta http-equiv="X-UA-Compatible" content="IE=edge">      
@@ -12,7 +12,27 @@
       <link rel="stylesheet" type="text/css" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
       <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
 
-      
+      <script>
+        function mostra1() {
+            var x = document.getElementById("codigo1");
+            if (x.style.display === "none") {
+                x.style.display = "block";
+            } else {
+                x.style.display = "none";
+            }
+        }
+      </script>
+
+      <script>
+        function mostra2() {
+            var x = document.getElementById("codigo2");
+            if (x.style.display === "none") {
+                x.style.display = "block";
+            } else {
+                x.style.display = "none";
+            }
+        }
+      </script>
     </head>
 
     <!--NAV BAR-->
@@ -29,28 +49,56 @@
     <!--TEXTO-->
 
     <div class ="projetos">
-
       <h1 class="h1">Projeto #1</h1>
+      <h2 class="h2">Controlar um <a href="servo.jpg" title="Starter Kit" target="_blank">servo</a> com um<br> <a href="IR.png" title="Starter Kit" target="_blank">comando</a> de infravermelhos</h2>
     </div>
 
-    <div class ="codigo">
+    <div class="proj">
+      <p>Inicialmente temos de descodificar as teclas do comando, pois para cada comando teremos um conjunto de códigos diferentes.</p>
 
-    <object data="servo.ino" type="text/octet-stream" width="700" style="height: 300px"></object>
-    <br>
-    
-    
+      <div class="Imagenscentro">
+          <a href="IR_decoder/IR_decoder_assemble.png" title="IR_decoder_assemble"  target="_blank"><img src="IR_decoder/IR_decoder_assemble.png" style="height: 300px" alt="IR_decoder_assemble"/></a>
+          <figcaption><i>Montagem para descodificar as teclas</i></figcaption>
 
-</div>
-<div class ="icones">
+        </div>
+      <button onclick="mostra1()">Mostar/Esconder código</button>
+      <br>
+      <div class ="box1">
+      
+      <div id="codigo1">
+
+        <div class ="codigo">
+            <object data="IR_decoder/IR_decoder.ino" type="text/octet-stream" width="700" style="height: 300px"></object>
+        </div>
+
+        <div class ="icones">
+          <a href="IR_decoder/IR_decoder.ino" title="IR_decoder.ino" target="_blank"><i class="fas fa-file-download" aria-hidden="true" alt="IR_decoder.ino"></i></a>
+        </div>
+          
+        <div class="legenda">
+          <p>Botão direito do rato sobre o ícone -> "Guardar link como..."<br>para guardar o ficheiro no seu computador</p>
+        </div>
+      </div>
+      </div>
+      
+      <br><br><button onclick="mostra2()">Mostar/Esconder código</button>
+      <div class ="box1">
+      <div id ="codigo2">
         
-    <a href="servo.ino" title="servo.ino" target="_blank"><i class="fas fa-file-download" aria-hidden="true" alt="servo.ino"></i></a>
+        <div class ="codigo">
+          <object data="servo_IR.ino" type="text/octet-stream" width="700" style="height: 300px"></object>
+        </div>
+
+        <div class ="icones">
+          <a href="servo_IR.ino" title="servo_IR.ino" target="_blank"><i class="fas fa-file-download" aria-hidden="true" alt="servo_IR.ino"></i></a>
+        </div>
     
-  </div>
-  <div class="Sigarrapag">
-      <p>Botão direito do rato sobre o ícone -> "Guardar link como..."<br>para guardar o sketch no seu computador</p>
-
+        <div class="legenda">
+          <p>Botão direito do rato sobre o ícone -> "Guardar link como..."<br>para guardar o ficheiro no seu computador</p>
+        </div>
+      </div>
     </div>
-
+  </div>
 
 
   </body>
