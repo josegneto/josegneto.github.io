@@ -57,6 +57,8 @@ hr.style1:after {  /* Not really supposed to work, but does */
     margin:20px;
   }
 
+  
+
   h2.h2{
     font-family: "Calibri";
     font-weight: 500;
@@ -65,7 +67,7 @@ hr.style1:after {  /* Not really supposed to work, but does */
   }
 
 
-  .lcontactos p, .projetos p, .ardproj, .proj{
+  .lcontactos p, .projetos p, .ardproj, .proj, .inicio{
     text-align: justify;
 
     font-family: "Calibri";
