@@ -12,7 +12,8 @@ hr.style1:after {  /* Not really supposed to work, but does */
 }
 
  figcaption{
-  font-weight: 700;
+   font-family: "Calibri";
+  font-weight: 500;
 
  }
  .proj ol li, .proj ol li a{
