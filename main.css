@@ -1,194 +1,193 @@
-.codigo{
-  text-align:center;
- }
-
- hr.style1 {
-  border: 0;
-  height: 0; /* Firefox... */
-  box-shadow: 0 0 10px 1px black;
-}
-hr.style1:after {  /* Not really supposed to work, but does */
-  content: "\00a0";  /* Prevent margin collapse */
+.codigo {
+	text-align: center;
 }
 
- figcaption{\
-   font-family: "Calibri";
-  font-weight: 500;
-
- }
- .proj ol li, .proj ol li a{
-  color: #8c2d19;
-  font-size: 21px;
-  font-weight: 700;
+hr.style1 {
+	border: 0;
+	height: 0;
+	/* Firefox... */
+	box-shadow: 0 0 10px 1px black;
 }
 
-.proj ol ul li, .proj ol ul li a{
-  color:rgb(42, 71, 165);
-  font-size: 18px;
- font-weight: 700;
+hr.style1:after {
+	/* Not really supposed to work, but does */
+	content: "\00a0";
+	/* Prevent margin collapse */
 }
 
-.materiais a{
-  color:black;
-  font-size: 18px;
- font-weight: 700;
+figcaption {
+	font-family: "Calibri";
+	font-weight: 500;
 }
 
- 
-.projli li{
-  padding-left: 30px;
+.proj ol li,
+.proj ol li a {
+	color: #8c2d19;
+	font-size: 21px;
+	font-weight: 700;
 }
 
+.proj ol ul li,
+.proj ol ul li a {
+	color: rgb(42, 71, 165);
+	font-size: 18px;
+	font-weight: 700;
+}
 
- btn.btn-primary {
-  border-radius: 2px;
-  border: 0px;
-  color: #fbd1d5;
-  text-shadow: none;
-  background-color: #8c2d19;
+.materiais a {
+	color: black;
+	font-size: 18px;
+	font-weight: 700;
+}
+
+.projli li {
+	padding-left: 30px;
+}
+
+btn.btn-primary {
+	border-radius: 2px;
+	border: 0px;
+	color: #fbd1d5;
+	text-shadow: none;
+	background-color: #8c2d19;
 }
 
 .btn.btn-primary:hover {
-  color: #ffffff;
-  background-color: black;
+	color: #ffffff;
+	background-color: black;
 }
 
-  h1.h1 {
-    font-family: "Calibri";
-    font-weight: 700;
-    text-align: center;
-    margin:20px;
-  }
+h1.h1 {
+	font-family: "Calibri";
+	font-weight: 700;
+	text-align: center;
+	margin: 20px;
+}
 
-  
+h2.h2 {
+	font-family: "Calibri";
+	font-weight: 500;
+	text-align: center;
+	margin: 20px;
+}
 
-  h2.h2{
-    font-family: "Calibri";
-    font-weight: 500;
-    text-align: center;
-    margin:20px;
-  }
+.lcontactos p,
+.projetos p,
+.ardproj,
+.proj,
+.inicio {
+	text-align: justify;
+	font-family: "Calibri";
+	font-size: 1.1em;
+	padding: 50px;
+}
+
+.icones {
+	text-align: center;
+	font-size: 3em;
+}
+
+.icones i {
+	color: black;
+}
+
+.Imagenscentro {
+	text-align: center;
+	display: block;
+}
+
+.legenda {
+	margin: 5px;
+	text-align: center;
+	display: block;
+	font-size: 9px;
+}
 
 
-  .lcontactos p, .projetos p, .ardproj, .proj, .inicio{
-    text-align: justify;
 
-    font-family: "Calibri";
-    font-size: 1.1em;
-    padding:50px;
-  }
-  
-  .icones{
-    text-align: center;
-    font-size: 3em; 
-  
-
-  }
-  .icones i{
-    color:black;
-  }
-  
-  .Imagenscentro {
-    text-align:center;
-    display:block;   
-  }
+.imagemborda {
+	border: 1px solid black;
+}
 
 
-  .legenda {
-    margin:5px;
-    text-align:center;
-    display:block;
-    font-size: 9px;
-  }
-  
+/*NAV BAR*/
 
-  .imagemborda {
-    border:1px solid black;
-  }
+.nav ul {
+	list-style: none;
+	background-color: #8c2d19;
+	padding: 0;
+	margin: 0;
+}
 
-  /*NAV BAR*/
+.nav li {
+	font-family: "Calibri";
+	font-size: 1.2em;
+	line-height: 40px;
+	text-align: left;
+}
 
-  .nav ul {
-    list-style: none;
-    background-color: #8c2d19;
-    padding: 0;
-    margin: 0;
-  }
-  
-  .nav li {
-    font-family: "Calibri";
-    font-size: 1.2em;
-    line-height: 40px;
-    text-align: left;
-  }
-  
-  .nav a {
-    text-decoration: none;
-    color: #fff;
-    display: block;
-    padding-left: 15px;
-    border-bottom: 1px solid #888;
-  }
+.nav a {
+	text-decoration: none;
+	color: #fff;
+	display: block;
+	padding-left: 15px;
+	border-bottom: 1px solid #888;
+}
 
-  .nav a.active:hover  {
-    background-color: black;
-  }
-  
-  .nav a.active {
-    background-color: #8c2d19 ;
-    color: #fff;
-    cursor: default;
-  }
+.nav a.active:hover {
+	background-color: black;
+}
 
-  /* Sub Menus */
-  .nav li li {
-    font-size: .8em;
-  }
-  
-  /*******************************************
+.nav a.active {
+	background-color: #8c2d19;
+	color: #fff;
+	cursor: default;
+}
+
+
+/* Sub Menus */
+
+.nav li li {
+	font-size: .8em;
+}
+
+
+/*******************************************
      Style menu for larger screens
   
      Using 650px (130px each * 5 items), but ems
      or other values could be used depending on other factors
   ********************************************/
-  @media screen and (min-width: 650px) {
-    .nav li {
-    width: 90px;
-    border-bottom: none;
-    height: 50px;
-    line-height: 50px;
-    font-size: 1.4em;
-    display: inline-block;
-    margin-right: -4px;
-    }
-  
-    .nav a {
-      border-bottom: none;
-    }
-  
-    .nav > ul > li {
-      text-align: center;
-    }
-  
-    .nav > ul > li > a {
-      padding-left: 0;
-    }
-  
-    /* Sub Menus */
-    .nav li ul {
-      position: absolute;
-      display: none;
-      width: inherit;
-    }
-  
-    .nav li:hover ul {
-      display: block;
-    }
-  
-    .nav li ul li {
-      display: block;
-    }
-  }
-  
-  
-   
+
+@media screen and (min-width: 650px) {
+	.nav li {
+		width: 90px;
+		border-bottom: none;
+		height: 50px;
+		line-height: 50px;
+		font-size: 1.4em;
+		display: inline-block;
+		margin-right: -4px;
+	}
+	.nav a {
+		border-bottom: none;
+	}
+	.nav>ul>li {
+		text-align: center;
+	}
+	.nav>ul>li>a {
+		padding-left: 0;
+	}
+	/* Sub Menus */
+	.nav li ul {
+		position: absolute;
+		display: none;
+		width: inherit;
+	}
+	.nav li:hover ul {
+		display: block;
+	}
+	.nav li ul li {
+		display: block;
+	}
+}

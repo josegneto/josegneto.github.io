@@ -1,177 +1,147 @@
 <!DOCTYPE html>
 <html lang="pt">
-  <body>
-    <head>
-      <title>Projeto #1</title>
+   <body>
+      <head>
+         <title>Projeto #1</title>
+         <meta charset="utf-8" />
+         <meta http-equiv="X-UA-Compatible" content="IE=edge">
+         <link rel="stylesheet" type="text/css" href="main.css">
+         <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"/>
+         <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+         
+         
+        <!--SCRIPTS-->
+          <!--Botao hide-->
 
-      <meta charset="utf-8" />
-      <meta http-equiv="X-UA-Compatible" content="IE=edge">      
-      
-      <link rel="stylesheet" type="text/css" href="main.css">
-      <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"/>
-      <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
-      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
-
-      <script>
-        function mostra1() {
-            var x = document.getElementById("codigo1");
-            if (x.style.display === "none") {
-                x.style.display = "block";
-            } else {
-                x.style.display = "none";
+         <script>
+            function mostra1() {
+                var x = document.getElementById("codigo1");
+                if (x.style.display === "none") {
+                    x.style.display = "block";
+                } else {
+                    x.style.display = "none";
+                }
             }
-        }
-      </script>
-
-      <script>
-        function mostra2() {
-            var x = document.getElementById("codigo2");
-            if (x.style.display === "none") {
-                x.style.display = "block";
-            } else {
-                x.style.display = "none";
+         </script>
+         <script>
+            function mostra2() {
+                var x = document.getElementById("codigo2");
+                if (x.style.display === "none") {
+                    x.style.display = "block";
+                } else {
+                    x.style.display = "none";
+                }
             }
-        }
-      </script>
-    </head>
+         </script>
+      </head>
 
-    <!--NAV BAR-->
-  
-    <div class="nav">
-        <ul>
+      <!--NAV BAR-->
+      <div class="nav">
+         <ul>
             <li class="home"><a class="active" href="index.html">Home</a></li>
             <li class="tutorials"><a class="active" href="arduino.html">Arduino</a>
             <li class="about"> <a class="active" href="about.html">Sobre</a></li>
             <li class="contact"><a class="active" href="contacto.html">Contacto</a></li>
-        </ul>
-    </div>
+         </ul>
+      </div>
+      <!--TEXTO-->
+      <div style="text-align: center" class="projetos">
+         <h1 class="h1">Projeto #1</h1>
+         <h2 class="h2">Controlar um motor Servo com um<br> comando de infravermelhos</h2>
+         <a href="imagens/completo.jpg" title="Projeto #1"  target="_blank"><img src="imagens/completo.jpg" style="width: 400px" alt="Projeto #1"/></a>
+      </div>
 
-    <!--TEXTO-->
-
-    <div style="text-align: center" class="projetos">
-      <h1 class="h1">Projeto #1</h1>
-      <h2 class="h2">Controlar um motor Servo com um<br> comando de infravermelhos</h2>
-      <a href="imagens/completo.jpg" title="Projeto #1"  target="_blank"><img src="imagens/completo.jpg" style="width: 400px" alt="Projeto #1"/></a>
-
-    </div>
-    
-    
-    <div class="proj">
-  
-
-        <p style="font-weight: 700; font-size: 23px">Índice</p>
-        
-        <ol>
+      <div class="proj">
+         <p style="font-weight: 700; font-size: 23px">Índice</p>
+         <ol>
             <li><a href="#Material">Material</a></li>
             <li><a href="#Descodificação do comando">Descodificação do comando</a></li>
             <ul>
-                <li><a href="#montagemdes">Montagem</a></li>
-                <li><a href="#codigodes">Código</a></li>
+               <li><a href="#montagemdes">Montagem</a></li>
+               <li><a href="#codigodes">Código</a></li>
             </ul>
-            <li><a href="#servo">Servo</a>
-              <ul>
-                <li><a href="#montagemservo">Montagem</a></li>
-                <li><a href="#codigoservo">Código</a></li>
-              </ul>
+            <li>
+               <a href="#servo">Controlar o Servo</a>
+               <ul>
+                  <li><a href="#montagemservo">Montagem</a></li>
+                  <li><a href="#codigoservo">Código</a></li>
+               </ul>
             </li>
-            </ol>
+         </ol>
+         <br>
+         <hr class="style1">
+         <br>
+         <p id="Material" style="text-align:center; font-weight: 700; font-size: 23px; color: #8c2d19">1. Material</p>
+         <div style="text-align: center">
+            <a href="imagens/servo.jpg" title="Servo"  target="_blank"><img src="imagens/servo.jpg" style="width: 200px" alt="Servo"/></a>
+            <a href="imagens/IR.png" title="IR receiver"  target="_blank"><img src="imagens/IR.png" style="width: 200px" alt="IR  receiver"/></a>
+            <a href="imagens/arduinouno.png" title="Arduino UNO"  target="_blank"><img src="imagens/arduinouno.png" style="width: 200px" alt="Arduino UNO"/></a>
             <br>
-            <hr class="style1">
-            <br>
-        <p id="Material" style="text-align:center; font-weight: 700; font-size: 23px; color: #8c2d19">1. Material</p>
-        <div style="text-align: center">
-          <a href="imagens/servo.jpg" title="Servo"  target="_blank"><img src="imagens/servo.jpg" style="width: 200px" alt="Servo"/></a>
-          <a href="imagens/IR.png" title="IR receiver"  target="_blank"><img src="imagens/IR.png" style="width: 200px" alt="IR  receiver"/></a>
-          <a href="imagens/arduinouno.png" title="Arduino UNO"  target="_blank"><img src="imagens/arduinouno.png" style="width: 200px" alt="Arduino UNO"/></a>
-          <br>
-          <a href="imagens/mini.png" title="Breadboard"  target="_blank"><img src="imagens/mini.png" style="height: 200px" alt="Breadboard"/></a>
-          <a href="imagens/fios.jpg" title="Fios"  target="_blank"><img src="imagens/Fios.jpg" style="width: 200px" alt="Fios"/></a>
-          <figcaption><i>Em cima: <strong>Servo</strong>, <strong>recetor IR</strong>.</i></figcaption>
-          <figcaption><i>Em baixo: <strong>Arduino Uno</strong>, <strong>breadboard</strong> (e mini) e <strong>fios</strong>.</i></figcaption>
-
-
-        </div>
-        
-       
-    <br>
-    <hr class="style1">
-
+            <a href="imagens/mini.png" title="Breadboard"  target="_blank"><img src="imagens/mini.png" style="height: 200px" alt="Breadboard"/></a>
+            <a href="imagens/fios.jpg" title="Fios"  target="_blank"><img src="imagens/fios.jpg" style="width: 200px" alt="Fios"/></a>
+            <figcaption><i>Em cima: <strong>Servo</strong>, <strong>recetor IR</strong>.</i></figcaption>
+            <figcaption><i>Em baixo: <strong>Arduino Uno</strong>, <strong>breadboard</strong> (e mini) e <strong>fios</strong>.</i></figcaption>
+         </div>
+         <br>
+         <hr class="style1">
+         <br>
+         <p id="Descodificação do comando"style="font-weight: 700; text-align: center; font-size: 23px; color:#8c2d19">2. Descodificação do comando</p>
+         <p id="montagemdes" style="font-weight: 700; padding-left:2em; font-size: 21px">Montagem</p>
+         <p style="padding-left: 6em">Inicialmente temos de descodificar as teclas do comando, pois para cada comando teremos um conjunto de códigos diferentes.</p>
+         
+         <div class="Imagenscentro">
+            <a href="IR_decoder/IR_decoder_assemble.png" title="IR_decoder_assemble"  target="_blank"><img src="IR_decoder/IR_decoder_assemble.png" style="height: 300px; margin-right:20px" alt="IR_decoder_assemble"/></a>
+            <a href="IR_decoder/montagem.jpg" title="IR_decoder_montagem"  target="_blank"><img src="IR_decoder/montagem.jpg" style="height: 300px; margin-left:20px" alt="IR_decoder_montagem"/></a>
+</div>
         <br>
+            <p style="padding-left: 6em"><a href="IR_decoder/IR_decoder_Sketch.fzz" title="Servo"  target="_blank">Download</a> do Sketch na imagem.</p>
 
-        <p id="Descodificação do comando"style="font-weight: 700; font-size: 23px; color:#8c2d19">2. Descodificação do comando</p>
-
-
-            <p id="montagemdes" style="font-weight: 700; padding-left:2em; font-size: 21px">Montagem</p>
-
-            <p style="padding-left: 6em">Inicialmente temos de descodificar as teclas do comando, pois para cada comando teremos um conjunto de códigos diferentes.</p>
-      
-            <div class="Imagenscentro">
-              <a href="IR_decoder/IR_decoder_assemble.png" title="IR_decoder_assemble"  target="_blank"><img src="IR_decoder/IR_decoder_assemble.png" style="height: 300px" alt="IR_decoder_assemble"/></a>
-              <figcaption><i>Montagem para descodificar o comando</i></figcaption>
-            </div>
-            <div class ="icones">
-                <a href="IR_decoder/IR_decoder_Sketch.fzz" title="IR decoder Sketch.fzz" target="_blank"><i class="fas fa-file-download" aria-hidden="true" alt="IR decoder Sketch.fzz"></i></a>
-              </div>
-                
-              <div class="legenda">
-                <p>Botão direito do rato sobre o ícone -> "Guardar link como..."<br>para guardar o ficheiro no seu computador</p>
-              </div>
-            </div>
-            <p id="codigodes" style="font-weight: 700; padding-left:2em; font-size: 21px">Código</p>
-            <div style ="padding-left: 6em" class="botao">
-            <button onclick="mostra1()">Mostrar/Esconder código</button>
-            </div>
-            <br>
-            
-      
-            <div id="codigo1">
-
-              <div class ="codigo">
-                  <iframe src="IR_decoder/IR_decoder.html" type="text/octet-stream" width="700" style="height: 300px   "></iframe>
-                  
-                </div>
-      
-              <div class ="icones">
-                <a href="IR_decoder/IR_decoder.ino" title="IR_decoder.ino" target="_blank"><i class="fas fa-file-download" aria-hidden="true" alt="IR_decoder.ino"></i></a>
-              </div>
-                
-              <div class="legenda">
-                <p>Botão direito do rato sobre o ícone -> "Guardar link como..."<br>para guardar o ficheiro no seu computador</p>
-              </div>
-            </div>
-        <br>
-            <hr class="style1">
-<br>
-        <p id="servo"style="text-align: center; font-weight: 700; font-size: 23px; color:#8c2d19">3. Servo</p>
-
-        <p id="montagemservo" style="font-weight: 700; padding-left:2em; font-size: 21px">Montagem</p>
-        <p style="padding-left: 6em">Inicialmente temos de descodificar as teclas do comando, pois para cada comando teremos um conjunto de códigos diferentes.</p>
-
-      
-        <p id="codigoservo" style="font-weight: 700; padding-left:2em; font-size: 21px">Código</p>
-
-        <div style ="padding-left: 6em" class="botao">
-            <button onclick="mostra2()">Mostrar/Esconder código</button>
+         <p style="padding-left: 6em">À medida que os botões são primidos, o código associado é escrito no Serial Monitor do IDE.
+          <br><br>
+          <div class="Imagenscentro">
+          <a href="IR_decoder/IR_decoder.png" title="IR_decoder.png"  target="_blank"><img src="IR_decoder/IR_decoder.png" style="width: 600px; text-align: center" alt="IR_decoder.png"/></a></p>
         </div>
-        <br>
-      
-      <div id="codigo2">
 
-        <div class ="codigo">
-            <iframe src="servo_IR/servo_IR.html" type="text/octet-stream" width="700" style="height: 300px   "></iframe>
-          </div>
-
-        <div class ="icones">
-          <a href="servo_IR/servo_IR.ino" title="servo_IR.ino" target="_blank"><i class="fas fa-file-download" aria-hidden="true" alt="servo_IR.ino"></i></a>
-        </div>
-    
-        <div class="legenda">
-          <p>Botão direito do rato sobre o ícone -> "Guardar link como..."<br>para guardar o ficheiro no seu computador</p>
+      <p id="codigodes" style="font-weight: 700; padding-left:2em; font-size: 21px">Código</p>
+      <div style ="padding-left: 6em" class="botao">
+         <button onclick="mostra1()">Mostrar/Esconder código</button>
+      </div>
+      <br>
+      <div id="codigo1">
+         <div class ="codigo">
+            <iframe src="IR_decoder/IR_decoder.html" type="text/octet-stream" width="700" style="height: 300px   "></iframe>
+         </div>
+         <div class ="icones">
+            <a href="IR_decoder/IR_decoder.ino" title="IR_decoder.ino" target="_blank"><i class="fas fa-file-download" aria-hidden="true" alt="IR_decoder.ino"></i></a>
+         </div>
+         <div class="legenda">
+          <p><strong>IR_decoder.ino</strong><br>Download do ficheiro</p>
         </div>
       </div>
-  </div>
+      <br>
+      <hr class="style1">
+      <br>
+      <p id="servo" style="text-align: center; font-weight: 700; font-size: 23px; color:#8c2d19">3. Controlar o Servo</p>
+      <p id="montagemservo" style="font-weight: 700; padding-left:2em; font-size: 21px">Montagem</p>
+      <p style="padding-left: 6em">Inicialmente temos de descodificar as teclas do comando, pois para cada comando teremos um conjunto de códigos diferentes.</p>
+      <p id="codigoservo" style="font-weight: 700; padding-left:2em; font-size: 21px">Código</p>
+      <div style ="padding-left: 6em" class="botao">
+         <button onclick="mostra2()">Mostrar/Esconder código</button>
+      </div>
+      <br>
+      <div id="codigo2">
+         <div class ="codigo">
+            <iframe src="servo_IR/servo_IR.html" type="text/octet-stream" width="700" style="height: 300px   "></iframe>
+         </div>
+         <div class ="icones">
+            <a href="servo_IR/servo_IR.ino" title="servo_IR.ino" target="_blank"><i class="fas fa-file-download" aria-hidden="true" alt="servo_IR.ino"></i></a>
+         </div>
+         <div class="legenda">
+          <p><strong>Servo_IR.ino</strong><br>Download do ficheiro</p>
+        </div>
+      </div>
+      </div>
 
-
-  </body>
-    
+   </body>
 </html>
