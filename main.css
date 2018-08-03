@@ -11,7 +11,7 @@ hr.style1:after {  /* Not really supposed to work, but does */
   content: "\00a0";  /* Prevent margin collapse */
 }
 
- figcaption{
+ figcaption{\
    font-family: "Calibri";
   font-weight: 500;
 
@@ -35,6 +35,9 @@ hr.style1:after {  /* Not really supposed to work, but does */
 }
 
  
+.projli li{
+  padding-left: 30px;
+}
 
 
  btn.btn-primary {
@@ -104,7 +107,7 @@ hr.style1:after {  /* Not really supposed to work, but does */
   }
 
   /*NAV BAR*/
-  
+
   .nav ul {
     list-style: none;
     background-color: #8c2d19;
