@@ -44,65 +44,104 @@
       <!--TEXTO-->
       <div style="text-align: center" class="projetos">
          <h1 class="h1">Projeto #1</h1>
-         <h2 class="h2">Controlar um motor Servo com um<br> comando de infravermelhos</h2>
-         <a href="imagens/completo.jpg" title="Projeto #1"  target="_blank"><img src="imagens/completo.jpg" style="width: 400px" alt="Projeto #1"/></a>
+         <h2 class="h2"><strong>Controlar um motor Servo<br> com um comando de infravermelhos</strong> </h2>
+
+         <video height="240" controls autoplay><source src="projeto1\Servofinal.3gp"</video>
       </div>
       <div class="proj">
          <p style="font-weight: 700; font-size: 23px">Índice</p>
          <ol>
-            <li><a href="#Material">Material</a></li>
-            <li><a href="#Descodificação do comando">Descodificação do comando</a></li>
+            <li><a href="#objetivo">Objetivo</a></li>
+            <li><a href="#material">Material</a></li>
+            <li><a href="#descodificacao">Descodificação do comando</a></li>
             <ul>
                <li><a href="#montagemdes">Montagem</a></li>
                <li><a href="#codigodes">Código</a></li>
+               <li><a href="#interdes">Interpretação dos resultados</a></li>
+
             </ul>
             <li>
                <a href="#servo">Controlar o Servo</a>
                <ul>
                   <li><a href="#montagemservo">Montagem</a></li>
                   <li><a href="#codigoservo">Código</a></li>
+                  <li><a href="#resservo">Resultados</a></li>
+
                </ul>
             </li>
          </ol>
-         <br>
+         <p style="padding-left: 6em">Baseei-me em dois projetos para realizar este <i>guide</i>: <a href="https://learn.adafruit.com/using-an-infrared-library/controlling-a-servo-with-ir-1" title="Controlling a Servo with IR"  target="_blank"><i>Arduino Infrared Remote Tutorial</i></a> e <a href="http://www.circuitbasics.com/arduino-ir-remote-receiver-tutorial/" title="How to Set Up an IR Remote and Receiver on an Arduino"  target="_blank"><i>How to Set Up an IR Remote and Receiver on an Arduino</i></a>.</p>
          <hr class="style1">
          <br>
-         <p id="Material" style="text-align:center; font-weight: 700; font-size: 23px; color: #8c2d19">1. Material</p>
+         <p id="objetivo" style="text-align:center; font-weight: 700; font-size: 23px; color: #8c2d19">1. Objetivo</p>
+
+         <p style="padding-left: 6em">Neste projeto iremos controlar um motor Servo com um comando de infravermelhos. 
+             <br>Começaremos por descodificar o comando, ou seja, obter o código correspondente a cada um dos botões de forma a que o microcontrolador saiba qual está a ser primida.
+             <br>De seguida, enviaremos instruções ao servo, consoante o botão que for premido. Seremos capazes de ajustar a velocidade à qual o motor se vai mover, assim como fazer o motor girar para posições que definirmos.</p>
+            <p style="padding-left: 6em">Penso que este trabalho não trará dificuldades de maior, pois tanto a montagem como o código são fáceis de acompanhar. Talvez a parte da descodificação seja a mais trabalhosa, pois temos de registar certa de 28 códigos (dependendo de comando), o que pode tornar-se repetitivo.</p>
+         
+         <hr class="style1">
+         <br>
+         <p id="material" style="text-align:center; font-weight: 700; font-size: 23px; color: #8c2d19">2. Material</p>
          <div style="text-align: center">
-            <a href="imagens/servo.jpg" title="Servo"  target="_blank"><img src="imagens/servo.jpg" style="width: 200px" alt="Servo"/></a>
-            <a href="imagens/IR.png" title="IR receiver"  target="_blank"><img src="imagens/IR.png" style="width: 200px" alt="IR  receiver"/></a>
-            <a href="imagens/arduinouno.png" title="Arduino UNO"  target="_blank"><img src="imagens/arduinouno.png" style="width: 200px" alt="Arduino UNO"/></a>
+            <a href="projeto1\imagens\servo.jpg" title="Servo"  target="_blank"><img src="projeto1\imagens\servo.jpg" style="width: 200px" alt="Servo"/></a>
+            <a href="projeto1\imagens\IR.png" title="IR receiver"  target="_blank"><img src="projeto1\imagens\IR.png" style="width: 200px" alt="IR  receiver"/></a>
+            <a href="projeto1\imagens\arduinouno.png" title="Arduino UNO"  target="_blank"><img src="projeto1\imagens\arduinouno.png" style="width: 200px" alt="Arduino UNO"/></a>
             <br>
-            <a href="imagens/mini.png" title="Breadboard"  target="_blank"><img src="imagens/mini.png" style="height: 200px" alt="Breadboard"/></a>
-            <a href="imagens/fios.jpg" title="Fios"  target="_blank"><img src="imagens/fios.jpg" style="width: 200px" alt="Fios"/></a>
-            <figcaption><i>Em cima: <strong>Servo</strong>, <strong>recetor IR e comando</strong>.</i></figcaption>
+            <a href="projeto1\imagens\mini.png" title="Breadboard"  target="_blank"><img src="projeto1\imagens\mini.png" style="height: 200px" alt="Breadboard"/></a>
+            <a href="projeto1\imagens\fios.jpg" title="Fios"  target="_blank"><img src="projeto1\imagens\fios.jpg" style="width: 200px" alt="Fios"/></a>
+            <figcaption><i>Em cima: <strong>Servo</strong>, <strong>recetor IR</strong> e <strong>comando</strong>.</i></figcaption>
             <figcaption><i>Em baixo: <strong>Arduino Uno</strong>, <strong>breadboard</strong> (e mini) e <strong>fios</strong>.</i></figcaption>
          </div>
          <br>
          <hr class="style1">
          <br>
-         <p id="Descodificação do comando"style="font-weight: 700; text-align: center; font-size: 23px; color:#8c2d19">2. Descodificação do comando</p>
-         <p style="padding-left: 6em">Inicialmente temos de descodificar as teclas do comando, pois para cada comando teremos um conjunto de códigos diferentes.<br>
+         <p id="descodificacao"style="font-weight: 700; text-align: center; font-size: 23px; color:#8c2d19">3. Descodificação do comando</p>
+         <p style="padding-left: 6em">Inicialmente temos de descodificar os botões do comando, pois para cada comando teremos um conjunto de códigos diferentes.<br>
             O modelo do comando que irei descodificar é o seguinte:
          </p>
          <br>
          <div class="Imagenscentro">
-            <a href="imagens/comando.JPG" title="Comando"  target="_blank"><img src="imagens/comando.JPG" style="height: 300px" alt="Comando"/></a>
+            <a href="projeto1\imagens\comando.JPG" title="Comando"  target="_blank"><img src="projeto1\imagens\comando.JPG" style="height: 300px" alt="Comando"/></a>
             <br>
          </div>
          <p id="montagemdes" style="font-weight: 700; padding-left:2em; font-size: 21px">Montagem</p>
          <br><br>
          <div class="Imagenscentro">
-            <a href="IR_decoder/IR_decoder_assemble.png" title="IR_decoder_assemble"  target="_blank"><img src="IR_decoder/IR_decoder_assemble.png" style="height: 300px; margin-right:20px" alt="IR_decoder_assemble"/></a>
-            <a href="IR_decoder/montagem.jpg" title="IR_decoder_montagem"  target="_blank"><img src="IR_decoder/montagem.jpg" style="height: 300px; margin-left:20px" alt="IR_decoder_montagem"/></a>
+            <a href="projeto1\IR_decoder\IR_decoder_montagem.png" title="IR_decoder_montagem"  target="_blank"><img src="projeto1\IR_decoder\IR_decoder_montagem.png" style="height: 300px; margin-right:20px" alt="IR_decoder_montagem"/></a>
+            <a href="projeto1\IR_decoder\montagem.jpg" title="IR_decoder_montagem"  target="_blank"><img src="projeto1\IR_decoder\montagem.jpg" style="height: 300px; margin-left:20px" alt="IR_decoder_montagem"/></a>
          </div>
          <br><br>
-         <p style="padding-left: 6em"><a href="IR_decoder/IR_decoder_Sketch.fzz" title="IR_decoder_Sketch"  target="_blank">Download</a> do Sketch na imagem.</p>
-         <p style="padding-left: 6em">Chamo particular atenção ao pormenor de que os pinos do recetor podem mudar: <a href="IR_decoder/IR_Receivers.jpg" title="IR_Receivers"  target="_blank">exemplos</a>. </p>
-         <p style="padding-left: 6em">À medida que os botões são primidos, o código associado é escrito no Serial Monitor do IDE. Na imagem abaixo foram primidos os botões 1, 2, 3 e 4.<br><br>
-         <div class="Imagenscentro">
-            <a href="IR_decoder/IR_decoder.png" title="IR_decoder.png"  target="_blank"><img src="IR_decoder/IR_decoder.png" style="width: 600px; text-align: center" alt="IR_decoder.png"/></a></p>
+         <p style="padding-left: 6em"><a href="projeto1\IR_decoder\IR_decoder_Sketch.fzz" title="IR_decoder_Sketch"  target="_blank">Download</a> do Sketch na imagem (Fritzing).</p>
+         <p style="padding-left: 6em">Chamo particular atenção ao pormenor de que os pinos do recetor podem mudar: <a href="projeto1\IR_decoder\IR_Receivers.jpg" title="IR_Receivers"  target="_blank">exemplos</a>. </p>
+        
+         <p id="codigodes" style="font-weight: 700; padding-left:2em; font-size: 21px">Código</p>
+         <p style="padding-left: 6em">O código que utlizei está apresentado abaixo. Para utilizar as funções chamadas no programa, é necessária a biblioteca <a href="http://z3t0.github.io/Arduino-IRremote/" title="IRremote"  target="_blank"><i>IRremote</i>.</a> </p><br>
+
+         <div style ="padding-left: 6em" class="botao">
+            <button onclick="mostra1()">Mostrar/Esconder código</button>
          </div>
+         <br>
+         <div id="codigo1">
+            <div class ="codigo">
+               <iframe src="projeto1\IR_decoder\IR_decoder.html" type="text/octet-stream" width="800" style="height: 300px   "></iframe>
+            </div>
+            <div class ="icones">
+               <a href="projeto1\IR_decoder\IR_decoder.ino" title="IR_decoder.ino" target="_blank"><i class="fas fa-file-download" aria-hidden="true" alt="IR_decoder.ino"></i></a>
+            </div>
+            <div class="legenda">
+               <p><strong>IR_decoder.ino</strong><br>Download do ficheiro</p>
+            </div>
+         </div> 
+         <br>
+         <p id="interdes" style="font-weight: 700; padding-left:2em; font-size: 21px">Interpretação dos resultados</p>
+
+         <p style="padding-left: 6em">À medida que os botões são primidos, o código HEX associado é escrito no Serial Monitor do IDE. Na imagem abaixo foram primidos os botões 1, 2, 3 e 4.<br><br></p>
+         <div class="Imagenscentro">
+            <a href="projeto1\IR_decoder\IR_decoder.png" title="IR_decoder.png"  target="_blank"><img src="projeto1\IR_decoder\IR_decoder.png" style="width: 600px; text-align: center" alt="IR_decoder.png"/></a></p>
+         </div>
+         <p style="padding-left: 6em">Em baixo estão apresentados os códigos obtidos para cada um dos botões do comando.</p>
+         <!-- TABELA -->
          <div>
             <p style="margin-top: 0pt; margin-bottom: 8pt; line-height: 108%; font-size: 11pt;"><span style="font-family: Calibri;">&nbsp;</span></p>
             <table align="center" style="border: 0.75pt solid #000000; border-collapse: collapse;" cellspacing="0" cellpadding="0">
@@ -156,19 +195,19 @@
                   </tr>
                   <tr style="height: 17pt;">
                      <td style="width: 65.75pt; border-top-style: solid; border-top-width: 0.75pt; border-right-style: solid; border-right-width: 0.75pt; border-bottom-style: solid; border-bottom-width: 0.75pt; padding-right: 5.03pt; padding-left: 5.03pt; vertical-align: top;">
-                        <p style="margin-top: 0pt; margin-bottom: 0pt; text-align: center; font-size: 12pt;"><strong><span style="font-family: Calibri;"><i class="fas fa-fast-backward" aria-hidden="true" alt="IR_decoder.ino"></i></span></strong></p>
+                        <p style="margin-top: 0pt; margin-bottom: 0pt; text-align: center; font-size: 12pt;"><strong><span style="font-family: Calibri;"><i class="fas fa-fast-backward" aria-hidden="true" title="Fast Backward" alt="Fast Backward"></i></span></strong></p>
                      </td>
                      <td style="width: 65.75pt; border-style: solid; border-width: 0.75pt; padding-right: 5.03pt; padding-left: 5.03pt; vertical-align: top;">
                         <p style="margin-top: 0pt; margin-bottom: 0pt; text-align: center; font-size: 12pt;"><span style="font-family: Calibri;">0x1FE807F</span></p>
                      </td>
                      <td style="width: 65.75pt; border-style: solid; border-width: 0.75pt; padding-right: 5.03pt; padding-left: 5.03pt; vertical-align: top;">
-                        <p style="margin-top: 0pt; margin-bottom: 0pt; text-align: center; font-size: 12pt;"><strong><span style="font-family: Calibri;"><i class="fas fa-fast-forward" aria-hidden="true" alt="IR_decoder.ino"></i></span></strong></p>
+                        <p style="margin-top: 0pt; margin-bottom: 0pt; text-align: center; font-size: 12pt;"><strong><span style="font-family: Calibri;"><i class="fas fa-fast-forward" aria-hidden="true" title="Fast Forward" alt="Fast Forward"></i></span></strong></p>
                      </td>
                      <td style="width: 65.75pt; border-style: solid; border-width: 0.75pt; padding-right: 5.03pt; padding-left: 5.03pt; vertical-align: top;">
                         <p style="margin-top: 0pt; margin-bottom: 0pt; text-align: center; font-size: 12pt;"><span style="font-family: Calibri;">0x1FE40BF</span></p>
                      </td>
                      <td style="width: 65.75pt; border-style: solid; border-width: 0.75pt; padding-right: 5.03pt; padding-left: 5.03pt; vertical-align: top;">
-                        <p style="margin-top: 0pt; margin-bottom: 0pt; text-align: center; font-size: 12pt;"><strong><span style="font-family: Calibri;"><i class="fas fa-play-circle" aria-hidden="true" alt="IR_decoder.ino"></i></span></strong></p>
+                        <p style="margin-top: 0pt; margin-bottom: 0pt; text-align: center; font-size: 12pt;"><strong><span style="font-family: Calibri;"><i class="fas fa-play-circle" aria-hidden="true" title="Play/Pause" alt="Play/Pause"></i></span></strong></p>
                      </td>
                      <td style="width: 65.75pt; border-top-style: solid; border-top-width: 0.75pt; border-left-style: solid; border-left-width: 0.75pt; border-bottom-style: solid; border-bottom-width: 0.75pt; padding-right: 5.03pt; padding-left: 5.03pt; vertical-align: top;">
                         <p style="margin-top: 0pt; margin-bottom: 0pt; text-align: center; font-size: 12pt;"><span style="font-family: Calibri;">0x1FEC03F</span></p>
@@ -279,43 +318,54 @@
             <p style="margin-top: 0pt; margin-bottom: 8pt; line-height: 108%; font-size: 11pt;"><span style="font-family: Calibri;">&nbsp;</span></p>
             <p style="margin-top: 0pt; margin-bottom: 8pt; text-align: center; line-height: 108%; font-size: 12pt;"><span style="font-family: Calibri;">&nbsp;</span></p>
          </div>
-         <p id="codigodes" style="font-weight: 700; padding-left:2em; font-size: 21px">Código</p>
-         <div style ="padding-left: 6em" class="botao">
-            <button onclick="mostra1()">Mostrar/Esconder código</button>
-         </div>
          <br>
-         <div id="codigo1">
-            <div class ="codigo">
-               <iframe src="IR_decoder/IR_decoder.html" type="text/octet-stream" width="700" style="height: 300px   "></iframe>
-            </div>
-            <div class ="icones">
-               <a href="IR_decoder/IR_decoder.ino" title="IR_decoder.ino" target="_blank"><i class="fas fa-file-download" aria-hidden="true" alt="IR_decoder.ino"></i></a>
-            </div>
-            <div class="legenda">
-               <p><strong>IR_decoder.ino</strong><br>Download do ficheiro</p>
-            </div>
-         </div>
-         <br>
+         <p style="padding-left: 6em">O processo é semelhante com qualquer outro comando. Experimentei com o da TV e o resultado foi semelhante, apenas os códigos dos botões são diferentes.
+             A diferença entre comandos surge na próxima etapa, pois há diferentes protocolos consoante o fabricanete dos mesmos. O protocolo mais comum em comandos que acompanham kits de iniciantes de Arduino é o NEC, já o comando de TV que experimentei usa o SAMSUNG. </p><br>
+
          <hr class="style1">
          <br>
-         <p id="servo" style="text-align: center; font-weight: 700; font-size: 23px; color:#8c2d19">3. Controlar o Servo</p>
+         <p id="servo" style="text-align: center; font-weight: 700; font-size: 23px; color:#8c2d19">4. Controlar o Servo</p>
+         
          <p id="montagemservo" style="font-weight: 700; padding-left:2em; font-size: 21px">Montagem</p>
-         <p style="padding-left: 6em">Inicialmente temos de descodificar as teclas do comando, pois para cada comando teremos um conjunto de códigos diferentes.</p>
+         <p style="padding-left: 6em">O próximo passo consiste em dar comandos ao servo: Rodar uma certa quantidade de graus, definida pela utilizador, ou girar permanentemente a uma velocidade (nº de graus) por nós indicada.
+            <br>Para isso, temos de adaptar a montagem anterior para acomodar o servo e dar-lhe instruções.</p>
+        <br>
+         <div class="Imagenscentro">
+            <a href="projeto1/servo_IR/servo_IR_montagem.png" title="servo_IR_montagem"  target="_blank"><img src="projeto1/servo_IR/servo_IR_montagem.png" style="height: 300px; margin-right:20px" alt="servo_IR_montagem"/></a>
+            <a href="projeto1/servo_IR/montagem.jpg" title="servo_IR_montagem"  target="_blank"><img src="projeto1/servo_IR/montagem.jpg" style="height: 300px; margin-left:20px" alt="servo_IR_montagem"/></a>
+         </div>
+         <br>
+         <p style="padding-left: 6em"><a href="projeto1/servo_IR/servo_IR_Sketch.fzz" title="servo_IR_Sketch"  target="_blank">Download</a> do Sketch na imagem (Fritzing).</p>
+
+         <p style="padding-left: 6em">Caso a imagem não seja clara, a montagem é idêntica à anterior.<br> Apenas necessitamos de ligar o servo. O meu servo traz três cabos: castanho, vermelho e laranja. O castanho é ligado ao GND (Terra), o vermelho ao VCC (+5V) e o laranja ao pino (9) definido mais abaixo no código.</p>
+             
+
+         <br>
+         
          <p id="codigoservo" style="font-weight: 700; padding-left:2em; font-size: 21px">Código</p>
+         <p style="padding-left: 6em">O código que utlizei está apresentado abaixo. Para utilizar as funções chamadas no programa, é necessária a biblioteca <a href="http://z3t0.github.io/Arduino-IRremote/" title="IRremote"  target="_blank"><i>IRLibAll</i></a>. </p><br>
+
+
          <div style ="padding-left: 6em" class="botao">
             <button onclick="mostra2()">Mostrar/Esconder código</button>
          </div>
          <br>
          <div id="codigo2">
             <div class ="codigo">
-               <iframe src="servo_IR/servo_IR.html" type="text/octet-stream" width="700" style="height: 300px   "></iframe>
+               <iframe src="projeto1\servo_IR\servo_IR.html" type="text/octet-stream" width="800" style="height: 300px   "></iframe>
             </div>
             <div class ="icones">
-               <a href="servo_IR/servo_IR.ino" title="servo_IR.ino" target="_blank"><i class="fas fa-file-download" aria-hidden="true" alt="servo_IR.ino"></i></a>
+               <a href="projeto1\servo_IR\servo_IR.ino" title="servo_IR.ino" target="_blank"><i class="fas fa-file-download" aria-hidden="true" alt="servo_IR.ino"></i></a>
             </div>
             <div class="legenda">
                <p><strong>Servo_IR.ino</strong><br>Download do ficheiro</p>
             </div>
+         </div>
+         <p id="resservo" style="font-weight: 700; padding-left:2em; font-size: 21px">Resultados</p>
+
+         <p style="padding-left: 6em">Na demonstração abaixo podemos ver o servo mover-se consoante os botões <span style="font-family: Calibri;"><i class="fas fa-fast-backward" aria-hidden="true" title="Fast Backward" alt="Fast Backward"></i></span> ou <span style="font-family: Calibri;"><i class="fas fa-fast-forward" aria-hidden="true" title="Fast Forward" alt="Fast Forward"></i></span> são primidas.<br><br></p>
+         <div style="text-align: center">
+         <video height="240" controls autoplay><source src="projeto1\Servofinal.3gp"</video>
          </div>
       </div>
    </body>

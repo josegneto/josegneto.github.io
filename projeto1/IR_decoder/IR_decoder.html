@@ -1,0 +1,156 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=Generator content="Microsoft Word 15 (filtered)">
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;}
+@font-face
+	{font-family:Consolas;
+	panose-1:2 11 6 9 2 2 4 3 2 4;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:8.0pt;
+	margin-left:0cm;
+	line-height:107%;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;}
+p.MsoHeader, li.MsoHeader, div.MsoHeader
+	{mso-style-link:"Header Char";
+	margin:0cm;
+	margin-bottom:.0001pt;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;}
+p.MsoFooter, li.MsoFooter, div.MsoFooter
+	{mso-style-link:"Footer Char";
+	margin:0cm;
+	margin-bottom:.0001pt;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;}
+span.HeaderChar
+	{mso-style-name:"Header Char";
+	mso-style-link:Header;}
+span.FooterChar
+	{mso-style-name:"Footer Char";
+	mso-style-link:Footer;}
+.MsoChpDefault
+	{font-family:"Calibri",sans-serif;}
+.MsoPapDefault
+	{margin-bottom:8.0pt;
+	line-height:107%;}
+ /* Page Definitions */
+ @page WordSection1
+	{size:595.3pt 841.9pt;
+	margin:70.85pt 3.0cm 70.85pt 3.0cm;}
+div.WordSection1
+	{page:WordSection1;}
+-->
+</style>
+
+</head>
+
+<body lang=EN-US>
+
+<div class=WordSection1>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+14.25pt;background:white'><span style='font-size:10.5pt;font-family:Consolas;
+color:black'>#include </span><span style='font-size:10.5pt;font-family:Consolas;
+color:maroon'>&lt;IRremote</span><span style='font-size:10.5pt;font-family:
+Consolas;color:black'>.</span><span style='font-size:10.5pt;font-family:Consolas;
+color:red'>h</span><span style='font-size:10.5pt;font-family:Consolas;
+color:maroon'>&gt;</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+14.25pt;background:white'><span style='font-size:10.5pt;font-family:Consolas;
+color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+14.25pt;background:white'><span style='font-size:10.5pt;font-family:Consolas;
+color:black'>const int RECV_PIN = 7; // Pino do recetor</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+14.25pt;background:white'><span style='font-size:10.5pt;font-family:Consolas;
+color:black'>IRrecv irrecv(RECV_PIN);</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+14.25pt;background:white'><span style='font-size:10.5pt;font-family:Consolas;
+color:black'>decode_results results;</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+14.25pt;background:white'><span style='font-size:10.5pt;font-family:Consolas;
+color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+14.25pt;background:white'><span style='font-size:10.5pt;font-family:Consolas;
+color:black'>void setup(){</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+14.25pt;background:white'><span style='font-size:10.5pt;font-family:Consolas;
+color:black'>  Serial.begin(9600);</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+14.25pt;background:white'><span style='font-size:10.5pt;font-family:Consolas;
+color:black'>  irrecv.enableIRIn();</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+14.25pt;background:white'><span style='font-size:10.5pt;font-family:Consolas;
+color:black'>  irrecv.blink13(true);</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+14.25pt;background:white'><span style='font-size:10.5pt;font-family:Consolas;
+color:black'>}</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+14.25pt;background:white'><span style='font-size:10.5pt;font-family:Consolas;
+color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+14.25pt;background:white'><span style='font-size:10.5pt;font-family:Consolas;
+color:black'>void loop(){</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+14.25pt;background:white'><span style='font-size:10.5pt;font-family:Consolas;
+color:black'>  if (irrecv.decode(</span><span style='font-size:10.5pt;
+font-family:Consolas;color:#CD3131'>&amp;</span><span style='font-size:10.5pt;
+font-family:Consolas;color:black'>results)){</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+14.25pt;background:white'><span style='font-size:10.5pt;font-family:Consolas;
+color:black'>        </span><span lang=PT style='font-size:10.5pt;font-family:
+Consolas;color:black'>Serial.println(results.value, HEX); // Escreve no Serial
+Monitor o código HEX correspondente à tecla primida</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+14.25pt;background:white'><span lang=PT style='font-size:10.5pt;font-family:
+Consolas;color:black'>        </span><span style='font-size:10.5pt;font-family:
+Consolas;color:black'>irrecv.resume();</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+14.25pt;background:white'><span style='font-size:10.5pt;font-family:Consolas;
+color:black'>  }</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+14.25pt;background:white'><span style='font-size:10.5pt;font-family:Consolas;
+color:black'>}</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+14.25pt;background:white'><span style='font-size:10.5pt;font-family:Consolas;
+color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=PT>&nbsp;</span></p>
+
+</div>
+
+</body>
+
+</html>

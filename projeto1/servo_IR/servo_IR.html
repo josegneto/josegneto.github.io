@@ -1,0 +1,556 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=Generator content="Microsoft Word 15 (filtered)">
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;}
+@font-face
+	{font-family:Consolas;
+	panose-1:2 11 6 9 2 2 4 3 2 4;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:8.0pt;
+	margin-left:0cm;
+	line-height:107%;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;}
+.MsoChpDefault
+	{font-family:"Calibri",sans-serif;}
+.MsoPapDefault
+	{margin-bottom:8.0pt;
+	line-height:107%;}
+@page WordSection1
+	{size:595.3pt 841.9pt;
+	margin:70.85pt 3.0cm 70.85pt 3.0cm;}
+div.WordSection1
+	{page:WordSection1;}
+-->
+</style>
+
+</head>
+
+<body lang=EN-US>
+
+<div class=WordSection1>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+14.25pt;background:white'><span lang=PT style='font-size:10.5pt;font-family:
+Consolas;color:blue'>#include </span><span lang=PT style='font-size:10.5pt;
+font-family:Consolas;color:#A31515'>&lt;IRLibAll.h&gt;</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+14.25pt;background:white'><span lang=PT style='font-size:10.5pt;font-family:
+Consolas;color:blue'>#include </span><span lang=PT style='font-size:10.5pt;
+font-family:Consolas;color:#A31515'>&lt;Servo.h&gt;</span><span lang=PT
+style='font-size:10.5pt;font-family:Consolas;color:blue'> </span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+14.25pt;background:white'><span lang=PT style='font-size:10.5pt;font-family:
+Consolas;color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+14.25pt;background:white'><span lang=PT style='font-size:10.5pt;font-family:
+Consolas;color:green'>// É necessário definir estes valores, dependendo do
+protocolo</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+14.25pt;background:white'><span lang=PT style='font-size:10.5pt;font-family:
+Consolas;color:green'>// e os códigos do comando que utilizamos</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+14.25pt;background:white'><span lang=PT style='font-size:10.5pt;font-family:
+Consolas;color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+14.25pt;background:white'><span style='font-size:10.5pt;font-family:Consolas;
+color:blue'>#define MY_PROTOCOL NEC</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+14.25pt;background:white'><span style='font-size:10.5pt;font-family:Consolas;
+color:blue'>#define CH</span><span style='font-size:10.5pt;font-family:Consolas;
+color:black'>-</span><span style='font-size:10.5pt;font-family:Consolas;
+color:blue'>           </span><span style='font-size:10.5pt;font-family:Consolas;
+color:#09885A'>0x1FE48B7</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+14.25pt;background:white'><span style='font-size:10.5pt;font-family:Consolas;
+color:blue'>#define CH            </span><span style='font-size:10.5pt;
+font-family:Consolas;color:#09885A'>0x1FE58A7</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+14.25pt;background:white'><span style='font-size:10.5pt;font-family:Consolas;
+color:blue'>#define CH</span><span style='font-size:10.5pt;font-family:Consolas;
+color:black'>+</span><span style='font-size:10.5pt;font-family:Consolas;
+color:blue'>           </span><span style='font-size:10.5pt;font-family:Consolas;
+color:#09885A'>0x1FE7887</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+14.25pt;background:white'><span lang=PT style='font-size:10.5pt;font-family:
+Consolas;color:blue'>#define FAST_BACKWARD </span><span lang=PT
+style='font-size:10.5pt;font-family:Consolas;color:#09885A'>0x1FE807F</span><span
+lang=PT style='font-size:10.5pt;font-family:Consolas;color:blue'>   </span><span
+lang=PT style='font-size:10.5pt;font-family:Consolas;color:green'>// Rodar o
+servo no sentido contrário ao dos ponteiros do relógio</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+14.25pt;background:white'><span lang=PT style='font-size:10.5pt;font-family:
+Consolas;color:blue'>#define FAST_FORWARD  </span><span lang=PT
+style='font-size:10.5pt;font-family:Consolas;color:#09885A'>0x1FE40BF</span><span
+lang=PT style='font-size:10.5pt;font-family:Consolas;color:blue'>   </span><span
+lang=PT style='font-size:10.5pt;font-family:Consolas;color:green'>// Rodar o
+servo no sentido dos ponteiros do relógio</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+14.25pt;background:white'><span lang=PT style='font-size:10.5pt;font-family:
+Consolas;color:blue'>#define PLAY_PAUSE    </span><span lang=PT
+style='font-size:10.5pt;font-family:Consolas;color:#09885A'>0x1FEC03F</span><span
+lang=PT style='font-size:10.5pt;font-family:Consolas;color:blue'>   </span><span
+lang=PT style='font-size:10.5pt;font-family:Consolas;color:green'>// Centrar o
+servo</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+14.25pt;background:white'><span lang=PT style='font-size:10.5pt;font-family:
+Consolas;color:blue'>#define VOLMENOS      </span><span lang=PT
+style='font-size:10.5pt;font-family:Consolas;color:#09885A'>0x1FE20DF</span><span
+lang=PT style='font-size:10.5pt;font-family:Consolas;color:blue'>   </span><span
+lang=PT style='font-size:10.5pt;font-family:Consolas;color:green'>// Diminuir a
+velocidade (número de graus) a que o servo gira</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+14.25pt;background:white'><span lang=PT style='font-size:10.5pt;font-family:
+Consolas;color:blue'>#define VOLMAIS       </span><span lang=PT
+style='font-size:10.5pt;font-family:Consolas;color:#09885A'>0x1FEA05F</span><span
+lang=PT style='font-size:10.5pt;font-family:Consolas;color:blue'>   </span><span
+lang=PT style='font-size:10.5pt;font-family:Consolas;color:green'>// Aumentar a
+velocidade (número de graus) a que o servo gira</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+14.25pt;background:white'><span lang=PT style='font-size:10.5pt;font-family:
+Consolas;color:blue'>#define EQ            </span><span lang=PT
+style='font-size:10.5pt;font-family:Consolas;color:#09885A'>0x1FE609F</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+14.25pt;background:white'><span lang=PT style='font-size:10.5pt;font-family:
+Consolas;color:blue'>#define BUTTON_0      </span><span lang=PT
+style='font-size:10.5pt;font-family:Consolas;color:#09885A'>0x1FEE01F</span><span
+lang=PT style='font-size:10.5pt;font-family:Consolas;color:blue'>   </span><span
+lang=PT style='font-size:10.5pt;font-family:Consolas;color:green'>// Pressionar
+os botões 0-9 faz girar 20 graus de cada vez</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+14.25pt;background:white'><span lang=PT style='font-size:10.5pt;font-family:
+Consolas;color:blue'>#define BUTTON_1      </span><span lang=PT
+style='font-size:10.5pt;font-family:Consolas;color:#09885A'>0x1FE50AF</span><span
+lang=PT style='font-size:10.5pt;font-family:Consolas;color:blue'>   </span><span
+lang=PT style='font-size:10.5pt;font-family:Consolas;color:green'>// para
+posições fixas</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+14.25pt;background:white'><span style='font-size:10.5pt;font-family:Consolas;
+color:blue'>#define BUTTON_2      </span><span style='font-size:10.5pt;
+font-family:Consolas;color:#09885A'>0x1FED827</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+14.25pt;background:white'><span style='font-size:10.5pt;font-family:Consolas;
+color:blue'>#define BUTTON_3      </span><span style='font-size:10.5pt;
+font-family:Consolas;color:#09885A'>0x1FEF807</span><span style='font-size:
+10.5pt;font-family:Consolas;color:blue'>      </span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+14.25pt;background:white'><span style='font-size:10.5pt;font-family:Consolas;
+color:blue'>#define BUTTON_4      </span><span style='font-size:10.5pt;
+font-family:Consolas;color:#09885A'>0x1FE30CF</span><span style='font-size:
+10.5pt;font-family:Consolas;color:blue'>       </span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+14.25pt;background:white'><span style='font-size:10.5pt;font-family:Consolas;
+color:blue'>#define BUTTON_5      </span><span style='font-size:10.5pt;
+font-family:Consolas;color:#09885A'>0x1FEB04F</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+14.25pt;background:white'><span style='font-size:10.5pt;font-family:Consolas;
+color:blue'>#define BUTTON_6      </span><span style='font-size:10.5pt;
+font-family:Consolas;color:#09885A'>0x1FE708F</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+14.25pt;background:white'><span style='font-size:10.5pt;font-family:Consolas;
+color:blue'>#define BUTTON_7      </span><span style='font-size:10.5pt;
+font-family:Consolas;color:#09885A'>0x1FE00FF</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+14.25pt;background:white'><span style='font-size:10.5pt;font-family:Consolas;
+color:blue'>#define BUTTON_8      </span><span style='font-size:10.5pt;
+font-family:Consolas;color:#09885A'>0x1FEF00F</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+14.25pt;background:white'><span style='font-size:10.5pt;font-family:Consolas;
+color:blue'>#define BUTTON_9      </span><span style='font-size:10.5pt;
+font-family:Consolas;color:#09885A'>0x1FE9867</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+14.25pt;background:white'><span style='font-size:10.5pt;font-family:Consolas;
+color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+14.25pt;background:white'><span lang=PT style='font-size:10.5pt;font-family:
+Consolas;color:black'>IRrecv myReceiver(</span><span lang=PT style='font-size:
+10.5pt;font-family:Consolas;color:#09885A'>7</span><span lang=PT
+style='font-size:10.5pt;font-family:Consolas;color:black'>);      </span><span
+lang=PT style='font-size:10.5pt;font-family:Consolas;color:green'>// Pino do
+recetor</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+14.25pt;background:white'><span lang=PT style='font-size:10.5pt;font-family:
+Consolas;color:black'>IRdecode myDecoder;</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+14.25pt;background:white'><span lang=PT style='font-size:10.5pt;font-family:
+Consolas;color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+14.25pt;background:white'><span lang=PT style='font-size:10.5pt;font-family:
+Consolas;color:black'>Servo myServo;             </span><span lang=PT
+style='font-size:10.5pt;font-family:Consolas;color:green'>// Objeto servo que
+controla o servo</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+14.25pt;background:white'><span lang=PT style='font-size:10.5pt;font-family:
+Consolas;color:black'>int16_t pos;               </span><span lang=PT
+style='font-size:10.5pt;font-family:Consolas;color:green'>// Variável que
+guarda a posição do servo</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+14.25pt;background:white'><span lang=PT style='font-size:10.5pt;font-family:
+Consolas;color:black'>int16_t Speed;             </span><span lang=PT
+style='font-size:10.5pt;font-family:Consolas;color:green'>// Velocidade (nº de
+graus) a mover cada vez que os botões VOLMENOS/VOLMAIS são pressionados</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+14.25pt;background:white'><span lang=PT style='font-size:10.5pt;font-family:
+Consolas;color:black'>uint32_t Previous;         </span><span lang=PT
+style='font-size:10.5pt;font-family:Consolas;color:green'>// Lida com códigos
+repetidos sucessivos</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+14.25pt;background:white'><span lang=PT style='font-size:10.5pt;font-family:
+Consolas;color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+14.25pt;background:white'><span lang=PT style='font-size:10.5pt;font-family:
+Consolas;color:blue'>void</span><span lang=PT style='font-size:10.5pt;
+font-family:Consolas;color:black'> setup() { </span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+14.25pt;background:white'><span lang=PT style='font-size:10.5pt;font-family:
+Consolas;color:black'>  myServo.attach(</span><span lang=PT style='font-size:
+10.5pt;font-family:Consolas;color:#09885A'>9</span><span lang=PT
+style='font-size:10.5pt;font-family:Consolas;color:black'>);       </span><span
+lang=PT style='font-size:10.5pt;font-family:Consolas;color:green'>// Relaciona
+o pino 9 com o objeto servo</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+14.25pt;background:white'><span lang=PT style='font-size:10.5pt;font-family:
+Consolas;color:black'>  pos = </span><span lang=PT style='font-size:10.5pt;
+font-family:Consolas;color:#09885A'>90</span><span lang=PT style='font-size:
+10.5pt;font-family:Consolas;color:black'>;                </span><span lang=PT
+style='font-size:10.5pt;font-family:Consolas;color:green'>// Ponto inicial: 90
+graus</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+14.25pt;background:white'><span lang=PT style='font-size:10.5pt;font-family:
+Consolas;color:black'>  Speed = </span><span lang=PT style='font-size:10.5pt;
+font-family:Consolas;color:#09885A'>3</span><span lang=PT style='font-size:
+10.5pt;font-family:Consolas;color:black'>;               </span><span lang=PT
+style='font-size:10.5pt;font-family:Consolas;color:green'>// O servo move-se 3
+graus cada vez que os botões VOLMENOS/VOLMAIS são pressionados</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+14.25pt;background:white'><span lang=PT style='font-size:10.5pt;font-family:
+Consolas;color:black'>  myServo.write(pos);      </span><span lang=PT
+style='font-size:10.5pt;font-family:Consolas;color:green'>// Coloca o servo na
+posição inicial definida acima</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+14.25pt;background:white'><span lang=PT style='font-size:10.5pt;font-family:
+Consolas;color:black'>  myReceiver.enableIRIn(); </span><span lang=PT
+style='font-size:10.5pt;font-family:Consolas;color:green'>// Ativa o recetor </span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+14.25pt;background:white'><span lang=PT style='font-size:10.5pt;font-family:
+Consolas;color:black'>} </span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+14.25pt;background:white'><span lang=PT style='font-size:10.5pt;font-family:
+Consolas;color:black'>  </span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+14.25pt;background:white'><span style='font-size:10.5pt;font-family:Consolas;
+color:blue'>void</span><span style='font-size:10.5pt;font-family:Consolas;
+color:black'> loop() </span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+14.25pt;background:white'><span style='font-size:10.5pt;font-family:Consolas;
+color:black'>{ </span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+14.25pt;background:white'><span style='font-size:10.5pt;font-family:Consolas;
+color:black'>    </span><span style='font-size:10.5pt;font-family:Consolas;
+color:blue'>if</span><span style='font-size:10.5pt;font-family:Consolas;
+color:black'> (myReceiver.getResults()) {</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+14.25pt;background:white'><span style='font-size:10.5pt;font-family:Consolas;
+color:black'>       </span><span lang=PT style='font-size:10.5pt;font-family:
+Consolas;color:black'>myDecoder.decode();</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+14.25pt;background:white'><span lang=PT style='font-size:10.5pt;font-family:
+Consolas;color:black'>       </span><span lang=PT style='font-size:10.5pt;
+font-family:Consolas;color:blue'>if</span><span lang=PT style='font-size:10.5pt;
+font-family:Consolas;color:black'>(myDecoder.protocolNum==MY_PROTOCOL) {</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+14.25pt;background:white'><span lang=PT style='font-size:10.5pt;font-family:
+Consolas;color:black'>         </span><span style='font-size:10.5pt;font-family:
+Consolas;color:blue'>if</span><span style='font-size:10.5pt;font-family:Consolas;
+color:black'>(myDecoder.value==</span><span style='font-size:10.5pt;font-family:
+Consolas;color:#09885A'>0xFFFFFFFF</span><span style='font-size:10.5pt;
+font-family:Consolas;color:black'>)</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+14.25pt;background:white'><span style='font-size:10.5pt;font-family:Consolas;
+color:black'>           myDecoder.value=Previous;</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+14.25pt;background:white'><span style='font-size:10.5pt;font-family:Consolas;
+color:black'>         </span><span style='font-size:10.5pt;font-family:Consolas;
+color:blue'>switch</span><span style='font-size:10.5pt;font-family:Consolas;
+color:black'>(myDecoder.value) {</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+14.25pt;background:white'><span style='font-size:10.5pt;font-family:Consolas;
+color:black'>            </span><span style='font-size:10.5pt;font-family:Consolas;
+color:blue'>case</span><span style='font-size:10.5pt;font-family:Consolas;
+color:black'> FAST_BACKWARD: pos=min(</span><span style='font-size:10.5pt;
+font-family:Consolas;color:#09885A'>180</span><span style='font-size:10.5pt;
+font-family:Consolas;color:black'>,pos+Speed); </span><span style='font-size:
+10.5pt;font-family:Consolas;color:blue'>break</span><span style='font-size:
+10.5pt;font-family:Consolas;color:black'>;</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+14.25pt;background:white'><span style='font-size:10.5pt;font-family:Consolas;
+color:black'>            </span><span style='font-size:10.5pt;font-family:Consolas;
+color:blue'>case</span><span style='font-size:10.5pt;font-family:Consolas;
+color:black'> FAST_FORWARD:  pos=max(</span><span style='font-size:10.5pt;
+font-family:Consolas;color:#09885A'>0</span><span style='font-size:10.5pt;
+font-family:Consolas;color:black'>,pos-Speed); </span><span style='font-size:
+10.5pt;font-family:Consolas;color:blue'>break</span><span style='font-size:
+10.5pt;font-family:Consolas;color:black'>;</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+14.25pt;background:white'><span style='font-size:10.5pt;font-family:Consolas;
+color:black'>            </span><span style='font-size:10.5pt;font-family:Consolas;
+color:blue'>case</span><span style='font-size:10.5pt;font-family:Consolas;
+color:black'> PLAY_PAUSE:    pos=</span><span style='font-size:10.5pt;
+font-family:Consolas;color:#09885A'>90</span><span style='font-size:10.5pt;
+font-family:Consolas;color:black'>; </span><span style='font-size:10.5pt;
+font-family:Consolas;color:blue'>break</span><span style='font-size:10.5pt;
+font-family:Consolas;color:black'>;</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+14.25pt;background:white'><span style='font-size:10.5pt;font-family:Consolas;
+color:black'>            </span><span style='font-size:10.5pt;font-family:Consolas;
+color:blue'>case</span><span style='font-size:10.5pt;font-family:Consolas;
+color:black'> VOLMAIS:       Speed=min(</span><span style='font-size:10.5pt;
+font-family:Consolas;color:#09885A'>10</span><span style='font-size:10.5pt;
+font-family:Consolas;color:black'>, Speed+</span><span style='font-size:10.5pt;
+font-family:Consolas;color:#09885A'>1</span><span style='font-size:10.5pt;
+font-family:Consolas;color:black'>); </span><span style='font-size:10.5pt;
+font-family:Consolas;color:blue'>break</span><span style='font-size:10.5pt;
+font-family:Consolas;color:black'>;</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+14.25pt;background:white'><span style='font-size:10.5pt;font-family:Consolas;
+color:black'>            </span><span style='font-size:10.5pt;font-family:Consolas;
+color:blue'>case</span><span style='font-size:10.5pt;font-family:Consolas;
+color:black'> VOLMENOS:      Speed=max(</span><span style='font-size:10.5pt;
+font-family:Consolas;color:#09885A'>1</span><span style='font-size:10.5pt;
+font-family:Consolas;color:black'>, Speed-</span><span style='font-size:10.5pt;
+font-family:Consolas;color:#09885A'>1</span><span style='font-size:10.5pt;
+font-family:Consolas;color:black'>); </span><span style='font-size:10.5pt;
+font-family:Consolas;color:blue'>break</span><span style='font-size:10.5pt;
+font-family:Consolas;color:black'>;</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+14.25pt;background:white'><span style='font-size:10.5pt;font-family:Consolas;
+color:black'>            </span><span style='font-size:10.5pt;font-family:Consolas;
+color:blue'>case</span><span style='font-size:10.5pt;font-family:Consolas;
+color:black'> BUTTON_0:      pos=</span><span style='font-size:10.5pt;
+font-family:Consolas;color:#09885A'>0</span><span style='font-size:10.5pt;
+font-family:Consolas;color:black'>*</span><span style='font-size:10.5pt;
+font-family:Consolas;color:#09885A'>20</span><span style='font-size:10.5pt;
+font-family:Consolas;color:black'>; </span><span style='font-size:10.5pt;
+font-family:Consolas;color:blue'>break</span><span style='font-size:10.5pt;
+font-family:Consolas;color:black'>;</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+14.25pt;background:white'><span style='font-size:10.5pt;font-family:Consolas;
+color:black'>            </span><span style='font-size:10.5pt;font-family:Consolas;
+color:blue'>case</span><span style='font-size:10.5pt;font-family:Consolas;
+color:black'> BUTTON_1:      pos=</span><span style='font-size:10.5pt;
+font-family:Consolas;color:#09885A'>1</span><span style='font-size:10.5pt;
+font-family:Consolas;color:black'>*</span><span style='font-size:10.5pt;
+font-family:Consolas;color:#09885A'>20</span><span style='font-size:10.5pt;
+font-family:Consolas;color:black'>; </span><span style='font-size:10.5pt;
+font-family:Consolas;color:blue'>break</span><span style='font-size:10.5pt;
+font-family:Consolas;color:black'>;</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+14.25pt;background:white'><span style='font-size:10.5pt;font-family:Consolas;
+color:black'>            </span><span style='font-size:10.5pt;font-family:Consolas;
+color:blue'>case</span><span style='font-size:10.5pt;font-family:Consolas;
+color:black'> BUTTON_2:      pos=</span><span style='font-size:10.5pt;
+font-family:Consolas;color:#09885A'>2</span><span style='font-size:10.5pt;
+font-family:Consolas;color:black'>*</span><span style='font-size:10.5pt;
+font-family:Consolas;color:#09885A'>20</span><span style='font-size:10.5pt;
+font-family:Consolas;color:black'>; </span><span style='font-size:10.5pt;
+font-family:Consolas;color:blue'>break</span><span style='font-size:10.5pt;
+font-family:Consolas;color:black'>;</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+14.25pt;background:white'><span style='font-size:10.5pt;font-family:Consolas;
+color:black'>            </span><span style='font-size:10.5pt;font-family:Consolas;
+color:blue'>case</span><span style='font-size:10.5pt;font-family:Consolas;
+color:black'> BUTTON_3:      pos=</span><span style='font-size:10.5pt;
+font-family:Consolas;color:#09885A'>3</span><span style='font-size:10.5pt;
+font-family:Consolas;color:black'>*</span><span style='font-size:10.5pt;
+font-family:Consolas;color:#09885A'>20</span><span style='font-size:10.5pt;
+font-family:Consolas;color:black'>; </span><span style='font-size:10.5pt;
+font-family:Consolas;color:blue'>break</span><span style='font-size:10.5pt;
+font-family:Consolas;color:black'>;</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+14.25pt;background:white'><span style='font-size:10.5pt;font-family:Consolas;
+color:black'>            </span><span style='font-size:10.5pt;font-family:Consolas;
+color:blue'>case</span><span style='font-size:10.5pt;font-family:Consolas;
+color:black'> BUTTON_4:      pos=</span><span style='font-size:10.5pt;
+font-family:Consolas;color:#09885A'>4</span><span style='font-size:10.5pt;
+font-family:Consolas;color:black'>*</span><span style='font-size:10.5pt;
+font-family:Consolas;color:#09885A'>20</span><span style='font-size:10.5pt;
+font-family:Consolas;color:black'>; </span><span style='font-size:10.5pt;
+font-family:Consolas;color:blue'>break</span><span style='font-size:10.5pt;
+font-family:Consolas;color:black'>;</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+14.25pt;background:white'><span style='font-size:10.5pt;font-family:Consolas;
+color:black'>            </span><span style='font-size:10.5pt;font-family:Consolas;
+color:blue'>case</span><span style='font-size:10.5pt;font-family:Consolas;
+color:black'> BUTTON_5:      pos=</span><span style='font-size:10.5pt;
+font-family:Consolas;color:#09885A'>5</span><span style='font-size:10.5pt;
+font-family:Consolas;color:black'>*</span><span style='font-size:10.5pt;
+font-family:Consolas;color:#09885A'>20</span><span style='font-size:10.5pt;
+font-family:Consolas;color:black'>; </span><span style='font-size:10.5pt;
+font-family:Consolas;color:blue'>break</span><span style='font-size:10.5pt;
+font-family:Consolas;color:black'>;</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+14.25pt;background:white'><span style='font-size:10.5pt;font-family:Consolas;
+color:black'>            </span><span style='font-size:10.5pt;font-family:Consolas;
+color:blue'>case</span><span style='font-size:10.5pt;font-family:Consolas;
+color:black'> BUTTON_6:      pos=</span><span style='font-size:10.5pt;
+font-family:Consolas;color:#09885A'>6</span><span style='font-size:10.5pt;
+font-family:Consolas;color:black'>*</span><span style='font-size:10.5pt;
+font-family:Consolas;color:#09885A'>20</span><span style='font-size:10.5pt;
+font-family:Consolas;color:black'>; </span><span style='font-size:10.5pt;
+font-family:Consolas;color:blue'>break</span><span style='font-size:10.5pt;
+font-family:Consolas;color:black'>;</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+14.25pt;background:white'><span style='font-size:10.5pt;font-family:Consolas;
+color:black'>            </span><span style='font-size:10.5pt;font-family:Consolas;
+color:blue'>case</span><span style='font-size:10.5pt;font-family:Consolas;
+color:black'> BUTTON_7:      pos=</span><span style='font-size:10.5pt;
+font-family:Consolas;color:#09885A'>7</span><span style='font-size:10.5pt;
+font-family:Consolas;color:black'>*</span><span style='font-size:10.5pt;
+font-family:Consolas;color:#09885A'>20</span><span style='font-size:10.5pt;
+font-family:Consolas;color:black'>; </span><span style='font-size:10.5pt;
+font-family:Consolas;color:blue'>break</span><span style='font-size:10.5pt;
+font-family:Consolas;color:black'>;</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+14.25pt;background:white'><span style='font-size:10.5pt;font-family:Consolas;
+color:black'>            </span><span style='font-size:10.5pt;font-family:Consolas;
+color:blue'>case</span><span style='font-size:10.5pt;font-family:Consolas;
+color:black'> BUTTON_8:      pos=</span><span style='font-size:10.5pt;
+font-family:Consolas;color:#09885A'>8</span><span style='font-size:10.5pt;
+font-family:Consolas;color:black'>*</span><span style='font-size:10.5pt;
+font-family:Consolas;color:#09885A'>20</span><span style='font-size:10.5pt;
+font-family:Consolas;color:black'>; </span><span style='font-size:10.5pt;
+font-family:Consolas;color:blue'>break</span><span style='font-size:10.5pt;
+font-family:Consolas;color:black'>;</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+14.25pt;background:white'><span style='font-size:10.5pt;font-family:Consolas;
+color:black'>            </span><span style='font-size:10.5pt;font-family:Consolas;
+color:blue'>case</span><span style='font-size:10.5pt;font-family:Consolas;
+color:black'> BUTTON_9:      pos=</span><span style='font-size:10.5pt;
+font-family:Consolas;color:#09885A'>9</span><span style='font-size:10.5pt;
+font-family:Consolas;color:black'>*</span><span style='font-size:10.5pt;
+font-family:Consolas;color:#09885A'>20</span><span style='font-size:10.5pt;
+font-family:Consolas;color:black'>; </span><span style='font-size:10.5pt;
+font-family:Consolas;color:blue'>break</span><span style='font-size:10.5pt;
+font-family:Consolas;color:black'>;</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+14.25pt;background:white'><span style='font-size:10.5pt;font-family:Consolas;
+color:black'>         </span><span lang=PT style='font-size:10.5pt;font-family:
+Consolas;color:black'>}</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+14.25pt;background:white'><span lang=PT style='font-size:10.5pt;font-family:
+Consolas;color:black'>         myServo.write(pos); </span><span lang=PT
+style='font-size:10.5pt;font-family:Consolas;color:green'>// Comanda o servo
+para se mover para a posição indicada pela variável 'pos'</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+14.25pt;background:white'><span lang=PT style='font-size:10.5pt;font-family:
+Consolas;color:black'>         </span><span style='font-size:10.5pt;font-family:
+Consolas;color:black'>Previous=myDecoder.value;</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+14.25pt;background:white'><span style='font-size:10.5pt;font-family:Consolas;
+color:black'>       }</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+14.25pt;background:white'><span style='font-size:10.5pt;font-family:Consolas;
+color:black'>       myReceiver.enableIRIn();</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+14.25pt;background:white'><span style='font-size:10.5pt;font-family:Consolas;
+color:black'>    }</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+14.25pt;background:white'><span style='font-size:10.5pt;font-family:Consolas;
+color:black'>}</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+14.25pt;background:white'><span style='font-size:10.5pt;font-family:Consolas;
+color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=PT>&nbsp;</span></p>
+
+</div>
+
+</body>
+
+</html>

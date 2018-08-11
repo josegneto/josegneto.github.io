@@ -1,3 +1,4 @@
+
 .codigo {
 	text-align: center;
 }
@@ -44,43 +45,38 @@ figcaption {
 	padding-left: 30px;
 }
 
-btn.btn-primary {
-	border-radius: 2px;
-	border: 0px;
-	color: #fbd1d5;
-	text-shadow: none;
-	background-color: #8c2d19;
-}
 
-.btn.btn-primary:hover {
-	color: #ffffff;
-	background-color: black;
-}
 
 h1.h1 {
 	font-family: "Calibri";
 	font-weight: 700;
 	text-align: center;
-	margin: 20px;
+	padding-top: 20px;
+	color: #8c2d19;
 }
 
 h2.h2 {
 	font-family: "Calibri";
-	font-weight: 500;
 	text-align: center;
 	margin: 20px;
+	
 }
 
 .lcontactos p,
 .projetos p,
 .ardproj,
 .proj,
-.inicio {
+.inicio, 
+.aboutme {
 	text-align: justify;
 	font-family: "Calibri";
 	font-size: 1.1em;
-	padding: 50px;
+	padding-left: 150px;
+	padding-right: 150px;
+	padding-top: 20px;
 }
+
+
 
 .icones {
 	text-align: center;
@@ -191,3 +187,71 @@ h2.h2 {
 		display: block;
 	}
 }
+.footer-distributed{
+	background-color: white;
+	box-shadow: 0 1px 1px 0 white;
+	box-sizing: border-box;
+
+	font: normal 16px sans-serif;
+  
+padding-right: 15px;
+	position: relative;
+	bottom: 0;
+  }
+  
+  .footer-distributed .footer-left p{
+	color:  black;
+	font-size: 14px;
+	margin: 0;
+	margin-top: 5px;
+	text-align: center;
+
+
+
+  }
+  
+  /* Footer links */
+  
+  
+  
+  
+  
+  .footer-distributed .footer-right{
+	float: right;
+	margin-top: 6px;
+	max-width: 180px;
+  }
+  
+  .footer-distributed .footer-right a{
+	display: inline-block;
+	width: 35px;
+	height: 35px;
+	background-color:  black;
+	border-radius: 2px;
+  
+	font-size: 20px;
+	color: #ffffff;
+	text-align: center;
+	line-height: 35px;
+  
+	margin-left: 3px;
+  }
+  
+  /* If you don't want the footer to be responsive, remove these media queries */
+  
+  @media (max-width: 600px) {
+  
+	.footer-distributed .footer-left,
+	.footer-distributed .footer-right{
+	  text-align: center;
+	}
+  
+	.footer-distributed .footer-right{
+	  float: none;
+	  margin: 0 auto 20px;
+	}
+  
+	.footer-distributed .footer-left p.footer-links{
+	  line-height: 1.8;
+	}
+  }
