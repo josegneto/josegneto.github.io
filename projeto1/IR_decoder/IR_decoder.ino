@@ -1,4 +1,4 @@
-/*Adaptado de Examples -> IRremote -> IRrecvDemo por zeneto*/
+/* Adaptado de Examples -> IRremote -> IRrecvDemo por josegneto.github.io */
 
 #include <IRremote.h>
 

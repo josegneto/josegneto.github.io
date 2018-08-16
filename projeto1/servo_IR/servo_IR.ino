@@ -1,3 +1,5 @@
+/* Adaptado de Examples -> IRLib2 -> servo por josegneto.github.io */
+
 #include <IRLibAll.h>
 #include <Servo.h> 
 

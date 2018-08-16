@@ -1,3 +1,6 @@
+/* Teste de botões e LEDs por josegneto.github.io */
+
+
 const int botao1 = 2; // 1o botao
 const int botao2 = 3; // 2o botao
 const int botao3 = 4; // 3o botao

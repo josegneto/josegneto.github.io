@@ -1,3 +1,6 @@
+/* Adaptado de Random Nerd Tutorials por josegneto.github.io */
+
+
 const int botao1 = 2; // 1o botao
 const int botao2 = 3; // 2o botao
 const int botao3 = 4; // 3o botao
@@ -12,8 +15,7 @@ const int notas[] = {1915, 1700, 1519, 1432, 2700}; // Notas associadas a cada b
 
 // Variaveis
 int EstadoBotao[] = {0,0,0,0};     // estado atual do botao
-//int ultimoEstadoBotao[] = {0,0,0,0}; // estado anterior do botao
-//int botaoPushCounter[] = {0,0,0,0};
+
 
 void TocaNota(int nota, int duracao) {
     for (long i = 0; i < duracao * 1000L; i += nota * 2) {
@@ -43,24 +45,23 @@ void setup() {
 }
 int game_on = 0;
 int wait = 0;
-int currentlevel = 1; // This is the level (also the number of botao presses to pass to next level)
-long rand_num = 0; //initialize long variable for random number from 0-100.
-int rando = 0; //initialize random integer for loopgame_on. Will be from 1-4 later.
-int butwait = 500; //amount of time to wait for next botao input (ghetto de-bounce)
-int ledtime = 500; //amount of time each LED flashes for when botao is pressed
-int n_levels = 10; //number of levels until the game is won
-int pinandnota = 0; //This integer is used when the sequence is displayed
-int right = 0; //This variable must be 1 in order to go to the next level
-int speedfactor = 5; //This is the final speed of the lights and sounds for the last level. This increases as more games are won
-int leddelay = 200; //Initializing time for LED. This will decrease as the level increases
+int currentlevel = 1; // Nivel (coincide com o numero de botoes a pressionar para passar para o proximo nivel)
+long rand_num = 0;    // Variavel onde sera gerado um numero aleatorio entre 0-100
+int rando = 0;        // Inteiro entre 1-4 (botao a pressionar / LED que acende)
+int ledtime = 500;    // Tempo durante o qual o LED está aceso quando o botão é primido
+int n_levels = 10;    // Numero de niveis do jogo
+int pinandnota = 0;   
+int right = 0;        // A variavel assume '1' quando a sequencia esta correta, de modo a passar de nivel
+int speedfactor = 5;  // Velocidade dos LEDs e sons no ultimo nivel. Aumenta a medida que se ganham jogos
+int leddelay = 200;   // Tempo de inicializacao do LED. Diminui a medida que o nivel aumenta
 
 void loop() {
 
     int n_array[n_levels];
     int u_array[n_levels];
     int i;
-//clears arrays both "n_array" and "u_array" and starts a new game
-    if (game_on == 0) {
+    
+    if (game_on == 0) { // Limpa os vetores "n_array" e "u_array" e comeca um novo jogo
         for(i=0; i<n_levels; i=i+1) {
             n_array[i]=0;
             u_array[i]=0;
@@ -73,13 +74,12 @@ void loop() {
                 rando=2;
             else if (rand_num<=200)
                 rando=3;
-//saves a random number in our n_array
-            n_array[i]=rando;
+
+            n_array[i]=rando; // Guarda um numero aleatorio no vetor "n_array"
         }
         game_on = 1;
     }
-//shows the user the current sequence
-    if (wait == 0) {
+    if (wait == 0) {// Mostra ao jogador a sequencia
         delay (200);
         i = 0;
         for (i = 0; i < currentlevel; i= i + 1) {
@@ -94,7 +94,7 @@ void loop() {
     }
     i = 0;
     int botaochange = 0;
-    int j = 0; // This is the current position in the sequence
+    int j = 0; // Posicao correta na sequencia
 
     while (j < currentlevel) {
         while (botaochange == 0) {
@@ -155,16 +155,13 @@ void loop() {
         delay(500);
         game_on = 0;
     }
-//if you insert the right sequence it levels up
-    if (right == 1) {
+    if (right == 1) { //Se a sequencia for a correta, aumenta o nivel
         currentlevel++;
         wait = 0;
     }
-//if you finish the game
-    if (currentlevel == n_levels) {
+    if (currentlevel == n_levels) { // Caso se ganhe o jogo
         delay(500);
-// The following is the victory sound:
-        int notes[] = {2, 2, 2, 2, 0, 1, 2, 1, 2};
+        int notes[] = {2, 2, 2, 2, 0, 1, 2, 1, 2}; // Som da vitoria
         int note = 0;
         int tempo[] = {200, 200, 200, 400, 400, 400, 200, 200, 600};
         int breaks[] = {100, 100, 100, 200, 200, 200, 300, 100, 200};
@@ -175,11 +172,9 @@ void loop() {
             digitalWrite(note+7, LOW);
             delay(breaks[i]);
         }
-//sets game_on to 0, so it restarts a new game
-        game_on = 0;
+        game_on = 0; // "game_on" é colocado a 0, de modo a iniciar-se um novo jogo
         currentlevel = 1;
         n_levels = n_levels + 2;
         speedfactor = speedfactor + 1;
     }
 }
-
