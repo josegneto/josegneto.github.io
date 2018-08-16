@@ -25,7 +25,7 @@
 #define BUTTON_8      0x1FEF00F
 #define BUTTON_9      0x1FE9867
 
-IRrecv myReceiver(7);      // Pino do recetor
+IRrecv myReceiver(11);      // Pino do recetor
 IRdecode myDecoder;
 
 Servo myServo;             // Objeto servo que controla o servo
