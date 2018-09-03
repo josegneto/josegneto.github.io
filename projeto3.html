@@ -22,6 +22,16 @@
             }
          </script>
          <script>
+            function mostraseq() {
+                var x = document.getElementById("seq");
+                if (x.style.display === "none") {
+                    x.style.display = "block";
+                } else {
+                    x.style.display = "none";
+                }
+            }
+         </script>
+         <script>
                 function mostrateste() {
                     var x = document.getElementById("codeteste");
                     if (x.style.display === "none") {
@@ -54,8 +64,8 @@
             <li><a href="#objetivo">Objetivo</a></li>             
             <li><a href="#material">Material</a></li>
             <li><a href="#montagem">Montagem</a></li>
-            <li><a href="#jogo">Jogo da memória</a></li>
-            <li><a href="#simulacao">Simulação</a></li>
+            <li><a href="#sequencias">Exibir sequências</a></li>
+            <li><a href="#teclado">Inputs do teclado</a></li>
 
          </ol>
          <p style="padding-left: 6em">Baseei-me num projeto para realizar este <i>guide</i>: <a href="https://randomnerdtutorials.com/teensy-arduino-memory-game/" title="Teensy/Arduino – Memory Game"  target="_blank"><i>Teensy/Arduino – Memory Game</i></a>.</p>
@@ -97,20 +107,18 @@
             <a href="projeto3\imagens\matrix_pins.png" title="Pinos matriz"  target="_blank"><img src="projeto3\imagens\matrix_pins.png" style="height: 300px; margin-right:20px" alt="Pinos matriz"/></a>
          </div>
          <br>
-         <p style="padding-left: 6em">O modelo da minha matriz tem 16 pinos. Cada um deles é responsável por uma coluna ou uma linha, como indica a figura acima.</p>
+         <p style="padding-left: 6em">O modelo da matriz que vou utilizar tem 16 pinos. Cada um deles é responsável por uma coluna ou uma linha, como indica a figura acima.</p>
           <br>
          <div class="Imagenscentro">
-            <a href="projeto3\jogodamemoria_montagem.png" title="jogodamemoria_montagem"  target="_blank"><img src="projeto3\jogodamemoria_montagem.png" style="height: 300px; margin-right:20px" alt="jogodamemoria_montagem"/></a>
-            <a href="projeto3\montagem.jpg" title="montagem"  target="_blank"><img src="projeto3\montagem.jpg" style="height: 300px; margin-left:20px" alt="montagem"/></a>
+            <a href="projeto3\imagens\matrix_montagem.png" title="matrix_montagem"  target="_blank"><img src="projeto3\imagens\matrix_montagem.png" style="height: 300px; margin-right:20px" alt="matrix_montagem"/></a>
+            <a href="projeto3\imagens\matrix_montagem.png" title="montagem"  target="_blank"><img src="projeto3\imagens\matrix_montagem.png" style="height: 300px; margin-left:20px" alt="montagem"/></a>
          </div>
          <br>
-         <p style="padding-left: 6em"><a href="projeto3\jogodamemoria_Sketch.fzz" title="jogodamemoria_Sketch"  target="_blank">Download</a> do Sketch na imagem (Fritzing).</p>
+         <p style="padding-left: 6em"><a href="projeto3\matrix_Sketch.fzz" title="matrix_Sketch"  target="_blank">Download</a> do Sketch na imagem (Fritzing).</p>
         
        
          
-         <p style="padding-left: 6em">Chamo a atenção de que o material deve ser testado previamente para ser mais fácil interpretar erros que surjam.
-         <br>
-        Para testar o material utilizei o código abaixo, que inicialmente acende todos os LEDs para verificar que todos funcionam corretamente. Dois segundos depois, apaga-os. De seguida, é possível testar cada um dos botões e verificar se acende o respetivo LED.</p>
+         <p style="padding-left: 6em">Inicialmente começo por testar a montagem, pois das 16 ligações é possível que uma delas não esteja correta. Assim, o código abaixo liga todos os LEDs, permanentemente.</p>
        <br>        
 
        <div style ="padding-left: 6em" class="botao">
@@ -119,45 +127,54 @@
          <br>
          <div id="codeteste">
             <div class ="codigo">
-               <iframe src="projeto3\teste_botoes_leds\teste_botoes_leds.htm" type="text/octet-stream" width="800" style="height: 300px   "></iframe>
+               <iframe src="projeto3\teste\teste.html" type="text/octet-stream" width="800" style="height: 300px"></iframe>
             </div>
             <div class ="icones">
-               <a href="projeto3\teste_botoes_leds\teste_botoes_leds.ino" title="teste_botoes_leds.ino" target="_blank"><i class="fas fa-file-download" aria-hidden="true" alt="teste_botoes_leds.ino"></i></a>
+               <a href="projeto3\teste\teste.ino" title="teste.ino" target="_blank"><i class="fas fa-file-download" aria-hidden="true" alt="teste.ino"></i></a>
             </div>
             <div class="legenda">
-               <p><strong>teste_botoes_leds.ino</strong><br>Download do ficheiro</p>
+               <p><strong>teste.ino</strong><br>Download do ficheiro</p>
             </div>
          </div>
          
 
          <hr class="style1">
          <br>
-         <p id="jogo" style="text-align: center; font-weight: 700; font-size: 23px; color:#8c2d19">4. Jogo da memória</p>
-         
-         <p style="padding-left: 6em">O código que utlizei está apresentado abaixo.</p><br>
+         <p id="sequencias" style="text-align: center; font-weight: 700; font-size: 23px; color:#8c2d19">4. Exibir sequências</p>
+         <br>
 
+         <div class="Imagenscentro">
+            <img src="projeto3\sequencia\final.gif"  alt="animated" />
+           </div>
+           <br>
+         <p style="padding-left: 6em">Uma das utilidades da matriz é permitir exibir mensagens/caracteres tal como num painel publicitário, por exemplo.</p><br>
+        
 
          <div style ="padding-left: 6em" class="botao">
-            <button onclick="mostra()">Mostrar/Esconder código</button>
+            <button onclick="mostraseq()">Mostrar/Esconder código</button>
          </div>
          <br>
-         <div id="code">
+         <div id="seq">
             <div class ="codigo">
-               <iframe src="projeto3\jogodamemoria\jogodamemoria.html" type="text/octet-stream" width="800" style="height: 300px   "></iframe>
+               <iframe src="projeto3\sequencia\sequencia.htm" type="text/octet-stream" width="800" style="height: 300px"></iframe>
             </div>
             <div class ="icones">
-               <a href="projeto3\jogodamemoria\jogodamemoria.ino" title="jogodamemoria.ino" target="_blank"><i class="fas fa-file-download" aria-hidden="true" alt="jogodamemoria.ino"></i></a>
+               <a href="projeto3\sequencia\sequencia.ino" title="sequencia.ino" target="_blank"><i class="fas fa-file-download" aria-hidden="true" alt="sequencia.ino"></i></a>
             </div>
             <div class="legenda">
-               <p><strong>jogodamemoria.ino</strong><br>Download do ficheiro</p>
+               <p><strong>sequencia.ino</strong><br>Download do ficheiro</p>
             </div>
          </div>
+         
+        
          <hr class="style1">
         <br>
-         <p id="simulacao" style="text-align: center; font-weight: 700; font-size: 23px; color:#8c2d19">5. Simulação</p>
-         <p style="padding-left: 6em">Na simulação cheguei até ao nível 4, mas premi o botão errado e perdi.<br><br></p>
-         <div style="text-align: center">
-            <iframe width="480" height="360" src="https://www.youtube.com/embed/zRZKroVg4ZI"></iframe>
+         <p id="teclado" style="text-align: center; font-weight: 700; font-size: 23px; color:#8c2d19">5. Inputs do teclado</p>
+         <p style="padding-left: 6em">Outra opção consiste em exibir caracteres à medida que primimos teclas do teclado.<br><br></p>
+         
+         
+         <!--<div style="text-align: center">
+            <iframe width="480" height="360" src="https://www.youtube.com/embed/zRZKroVg4ZI"></iframe>-->
            
         </div>
         <br><br>
