@@ -75,10 +75,6 @@ h2.h2 {
 	padding-top: 20px;
 }
 
-#rightleft{
-	padding-left: 6em;  
-	padding-right: 6em;
-}
 
 
 .icones {
@@ -110,31 +106,6 @@ h2.h2 {
 
 
 /*NAV BAR*/
-
-/*Dropdown*/
-
-  
-nav ul li.tutorials ul.child {
-    display: none; /* Hide Sub Menu */
-}
-nav ul li.tutorials:hover ul.child {
-    display: block; /* Show Sub Menu on Hover */
-    position: absolute;
-    top: 40px;
-    background: #03ADDF;
-}
-
-nav ul li.tutorials ul.child li {
-    width: 9em;
-    padding: 0;
-}
-nav ul li.tutorials ul.child li:hover {
-    background: #008FBA;
-}
-nav ul li.tutorials ul.child li a {
-    display: block;
-}
-
 
 .nav ul {
 	list-style: none;
