@@ -2,7 +2,7 @@
 <html lang="pt">
    <body>
       <head>
-         <title>Projeto #1</title>
+         <title>Osciloscópio Digital</title>
          <meta charset="utf-8" />
          <meta http-equiv="X-UA-Compatible" content="IE=edge">
          <link rel="stylesheet" type="text/css" href="main.css">
@@ -49,8 +49,7 @@
         </div>
       <!--TEXTO-->
       <div style="text-align: center" class="projetos">
-         <h1 class="h1">Projeto #1</h1>
-         <h2 class="h2"><strong>Controlar um motor Servo<br> com um comando de infravermelhos</strong> </h2>
+         <h1 class="h1">Osciloscópio Digital</h1>
 
          <img src="projeto1\imagens\final.webp" alt="animated" />
 
@@ -82,13 +81,15 @@
          <br>
          <p id="objetivo" style="text-align:center; font-weight: 700; font-size: 23px; color: #8c2d19">1. Objetivo</p>
 
-
-         <p id="rightleft">Neste projeto iremos controlar um motor Servo com um comando de infravermelhos. 
-             <br>Começaremos por descodificar o comando, ou seja, obter o código correspondente a cada um dos botões de forma a que o microcontrolador saiba qual está a ser primida.
-             <br>De seguida, enviaremos instruções ao servo, consoante o botão que for premido. Seremos capazes de ajustar a velocidade à qual o motor se vai mover, assim como fazer o motor girar para posições que definirmos.</p>
-
-             <p id="rightleft">Penso que este trabalho não trará dificuldades de maior, pois tanto a montagem como o código são fáceis de acompanhar. Talvez a parte da descodificação seja a mais trabalhosa, pois temos de registar certa de 28 códigos (dependendo de comando), o que pode tornar-se repetitivo.</p>
-        <br>
+         <p id="rightleft">O osciloscópio digital é construído recorrendo a um microcontrolador, nomeadamente o estudado na unidade curricular, o ATMega328p. 
+            É capaz de adquirir um sinal em tensão e representar a sua forma de onda num display LCD gráfico.  
+            Adicionalmente, implementou-se também a apresentação no ecrã de alguma informação das características da onda, como valores máximo, mínimo e pico-a-pico. 
+            A implementação de diferentes modos de <i>trigger</i>> era outro dos desafios adicionais mas, apesar de não ter sido concluída, é apresentada uma possível abordagem para o problema e a nossa solução.</p>
+            <p id="rightleft">Para adquirir o sinal foi utilizado o conversor analógico-digital do microcontrolador, que embora limitado cumpre os requisitos necessários para um osciloscópio digital simples, como o que nos propusemos a construir. 
+               A interface com o utilizador por sua vez é estabelecida através do LCD e de um conjunto de botões de pressão que permitem regular as escalas de tempo e tensão, fazer <i>run</i> e <i>stop</i> do desenho da onda no ecrã, e ainda selecionar a informação acerca da onda a representar no ecrã.</p>
+               <p id="rightleft">Todo o projeto de \textit{software} foi desenvolvido em C \textit{standard} e cumprindo os métodos de programação de microcontroladores trabalhados na UC de SBMI. 
+                  Como tal, tratamos uma grande variedade de conteúdos abordados nas aulas teóricas, como o conversor A/D, comunicação SPI e porta série assíncrona (embora usada só para \textit{debug}), interrupções externas, EEPROM e ainda relativo aos modos de \textit{trigger}, \textit{timers}.</p>
+               <br>
             <hr class="style1">
          <br>
          <p id="material" style="text-align:center; font-weight: 700; font-size: 23px; color: #8c2d19">2. Material</p>

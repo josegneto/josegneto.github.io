@@ -34,13 +34,19 @@
       </head>
       <!--NAV BAR-->
       <div class="nav">
-         <ul>
-            <li class="home"><a class="active" href="index.html">Home</a></li>
-            <li class="tutorials"><a class="active" href="arduino.html">Arduino</a>
-           <!-- <li class="about"> <a class="active" href="about.html">Sobre</a></li> -->
-           <li class="contact"><a class="active" href="contacto.html">Contacto</a></li>
-         </ul>
-      </div>
+            <ul>
+                <li class="home"><a class="active" href="index.html">Home</a></li>
+                <li class="tutorials"><a class="active" href="projetos.html">Projetos</a>
+                  <ul class="child">
+                      <li><a class="active" href="contacto.html">Products</a></li>
+                      <li><a class="active" href="contacto.html">Products</a></li>
+                      <li><a class="active" href="contacto.html">Products</a></li>
+                  </ul>
+               <!-- <li class="about"> <a class="active" href="about.html">Sobre</a></li> -->
+                <li class="contact"><a class="active" href="contacto.html">Contacto</a></li>
+              </li>
+            </ul>
+        </div>
       <!--TEXTO-->
       <div style="text-align: center" class="projetos">
          <h1 class="h1">Projeto #2</h1>
@@ -58,15 +64,15 @@
             <li><a href="#simulacao">Simulação</a></li>
 
          </ol>
-         <p style="padding-left: 6em">Baseei-me num projeto para realizar este <i>guide</i>: <a href="https://randomnerdtutorials.com/teensy-arduino-memory-game/" title="Teensy/Arduino – Memory Game"  target="_blank"><i>Teensy/Arduino – Memory Game</i></a>.</p>
+         <p id="rightleft">Baseei-me num projeto para realizar este <i>guide</i>: <a href="https://randomnerdtutorials.com/teensy-arduino-memory-game/" title="Teensy/Arduino – Memory Game"  target="_blank"><i>Teensy/Arduino – Memory Game</i></a>.</p>
          <hr class="style1">
          <br>
          <p id="objetivo" style="text-align:center; font-weight: 700; font-size: 23px; color: #8c2d19">1. Objetivo</p>
 
-         <p style="padding-left: 6em">Este projeto consistirá num jogo em que o microcontrolador gerará uma sequência aleatória que temos de memorizar e repetir.
+         <p id="rightleft">Este projeto consistirá num jogo em que o microcontrolador gerará uma sequência aleatória que temos de memorizar e repetir.
              <br>Ex: Um led acende e temos de primir o botão a ele associado. De seguida, esse mesmo led e outro acenderão e temos de premir os dois botões pela ordem correta. E assim sucessivamente.  
             <br> Em caso de erro, a buzina tocará e todos os leds se acenderão. Se o jogo for vencido (bater 10 níveis) é tocada uma música e uma sequência de LEDs é apresentada como prémio.</p>
-            <p style="padding-left: 6em">As dificuldades deste trabalho surgem na montagem, que involve muitas ligações próximas que se podem tornar confusas. E também no código, que não é propriamente simples.</p>
+            <p id="rightleft">As dificuldades deste trabalho surgem na montagem, que involve muitas ligações próximas que se podem tornar confusas. E também no código, que não é propriamente simples.</p>
          <br>
          <hr class="style1">
          <br>
@@ -95,11 +101,11 @@
             <a href="projeto2\imagens\montagem.jpg" title="montagem"  target="_blank"><img src="projeto2\imagens\montagem.jpg" style="height: 300px; margin-left:20px" alt="montagem"/></a>
          </div>
          <br>
-         <p style="padding-left: 6em"><a href="projeto2\jogodamemoria\jogodamemoria_Sketch.fzz" title="jogodamemoria_Sketch"  target="_blank">Download</a> do Sketch na imagem (Fritzing).</p>
+         <p id="rightleft"><a href="projeto2\jogodamemoria\jogodamemoria_Sketch.fzz" title="jogodamemoria_Sketch"  target="_blank">Download</a> do Sketch na imagem (Fritzing).</p>
         
        
          
-         <p style="padding-left: 6em">Chamo a atenção de que o material deve ser testado previamente para ser mais fácil interpretar erros que surjam.
+         <p id="rightleft">Chamo a atenção de que o material deve ser testado previamente para ser mais fácil interpretar erros que surjam.
          <br>
         Para testar o material utilizei o código abaixo, que inicialmente acende todos os LEDs para verificar que todos funcionam corretamente. Dois segundos depois, apaga-os. De seguida, é possível testar cada um dos botões e verificar se acende o respetivo LED.</p>
        <br>        
@@ -125,7 +131,7 @@
          <br>
          <p id="jogo" style="text-align: center; font-weight: 700; font-size: 23px; color:#8c2d19">4. Jogo da memória</p>
          
-         <p style="padding-left: 6em">O código que utlizei está apresentado abaixo.</p><br>
+         <p id="rightleft">O código que utlizei está apresentado abaixo.</p><br>
 
 
          <div style ="padding-left: 6em" class="botao">
@@ -146,7 +152,7 @@
          <hr class="style1">
         <br>
          <p id="simulacao" style="text-align: center; font-weight: 700; font-size: 23px; color:#8c2d19">5. Simulação</p>
-         <p style="padding-left: 6em">Na simulação cheguei até ao nível 4, mas premi o botão errado e perdi.<br><br></p>
+         <p id="rightleft">Na simulação cheguei até ao nível 4, mas premi o botão errado e perdi.<br><br></p>
          <div style="text-align: center">
             <iframe width="480" height="360" src="https://www.youtube.com/embed/zRZKroVg4ZI"></iframe>
            
