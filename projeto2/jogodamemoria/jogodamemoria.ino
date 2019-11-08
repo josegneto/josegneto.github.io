@@ -1,5 +1,6 @@
 /* Adaptado de Random Nerd Tutorials por josegneto.github.io */
 
+
 const int botao1 = 2; // 1o botao
 const int botao2 = 3; // 2o botao
 const int botao3 = 4; // 3o botao
@@ -14,6 +15,7 @@ const int notas[] = {1915, 1700, 1519, 1432, 2700}; // Notas associadas a cada b
 
 // Variaveis
 int EstadoBotao[] = {0,0,0,0};     // estado atual do botao
+
 
 void TocaNota(int nota, int duracao) {
     for (long i = 0; i < duracao * 1000L; i += nota * 2) {

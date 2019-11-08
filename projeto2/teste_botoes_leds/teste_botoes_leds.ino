@@ -1,5 +1,6 @@
 /* Teste de botões e LEDs por josegneto.github.io */
 
+
 const int botao1 = 2; // 1o botao
 const int botao2 = 3; // 2o botao
 const int botao3 = 4; // 3o botao
@@ -10,6 +11,7 @@ const int led3 = 9;   // LED associado ao 3o botao
 const int led4 = 10;  // LED associado ao 4o botao
 
 int estadobotao[4] = {0, 0, 0, 0}; // Vetor onde é guardado o estado de cada botao (HIGH ou LOW)
+
 
 void setup() {
   // Inicializa inputs :

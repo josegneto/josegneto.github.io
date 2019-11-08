@@ -2,7 +2,7 @@
 
 #include <IRremote.h>
 
-const int RECV_PIN = 7; // Pino do recetor
+const int RECV_PIN = 8; // Pino do recetor
 IRrecv irrecv(RECV_PIN);
 decode_results results;
 
