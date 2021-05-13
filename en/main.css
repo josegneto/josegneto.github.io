@@ -1,0 +1,458 @@
+/* 1º Trabalho Prático SIEM: CSS & HTML
+
+José Neto
+Outubro 2020 */
+
+/* Propriedades comuns aos alementos de todas as páginas */
+
+body,
+.navbar{
+    margin: 0;
+    font-family: "Calibri";
+}
+
+/*************** Barra de navegação ***************/
+
+/* Propriedades comuns a todos os elementos da barra de navegação */
+
+.navbar {
+    overflow: hidden;
+    background-color: #8c2d19;
+}
+
+/* Propriedades das hiperligações da barra de navegação */
+
+.navbar a {
+    text-decoration: none; /* Remove sublinhado das hiperligações */
+    float: left;           /* Posiciona os elementos da barra de tarefas à esquerda */
+    text-align: center;    /* Alinhamento do texto */
+    padding: 14px 16px;    /* Permite espaçar os elementos verticalmente (14px) e horizontalmente (16px) */
+    font-size: 20px;       /* Tamanho do tipo de letra */
+    color: white;        /* Cor do tipo de letra */
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000; /* Permite criar um efeito de contorno à volta dos caracteres */
+    font-weight: bold;     /* Caracteres a negrito */
+}
+
+/* A página atual tem propriedades diferentes na barra de navegação, nomeadamente a sua cor */
+
+.navbar a.active,
+.arduino-project-selector button.dropbtn.active a {
+    color: rgb(189, 182, 182);
+}
+
+/* Alteração de características durante 'hover' dos elementos da barra de navegação: cor de fundo muda para preto */
+
+.navbar a:hover,
+.lang-selector:hover .dropbtn,
+.arduino-project-selector:hover .dropbtn {
+    background-color: black;
+}
+
+/* Permite tirar os efeitos de contorno e negrito aos elementos 'dropdown' da barra de navegação */
+
+.dropbtn-content a {
+    text-shadow: none;
+    font-weight: normal;
+}
+
+/* Permite colocar a negrito certas partes do 'dropdown' da barra de navegação */
+
+.dropbtn-content .bold_text {
+    font-weight: bold;
+}
+
+/* Propriedades do 'dropdown' de seleção de idioma, nomeadamente posicioná-lo à direita da barra */
+
+.lang-selector {
+    float: right;
+}
+
+/* Propriedades do botão 'dropdown' de seleção de idioma (cor, contorno e negrito) */
+
+.lang-selector button {
+    color: white;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    font-weight: bold;
+}
+
+/* Permite centrar a hiperligação da escolha de idioma da barra de navegação */
+
+.lang-selector .dropbtn-content a{
+    text-align: center;
+}
+
+/* Permite centrar texto que surge durante o 'hover' do botão de seleção de idioma */
+
+.lang-selector .dropbtn-content {
+    text-align: center;
+}
+
+/* Propriedades do 'dropdown' de seleção dos projetos, nomeadamente posicioná-lo à esquerda da barra */
+
+.arduino-project-selector {
+    float: left;
+}
+
+/* Propriedades comuns aos elementos 'dropbtn' */
+
+.dropbtn {
+    font-size: 20px;
+    border: none;
+    outline: none;
+    padding: 14px 16px;
+    background-color: inherit;
+    font-family: inherit;
+    margin: 0;
+    color: white;
+}
+
+/* Propriedades comuns aos elementos 'dropbtn-content', que surgem durante o 'hover' dos botões de seleção de projeto e idioma */
+
+.dropbtn-content {
+    display: none;
+    position: absolute;
+    background-color: #ffeeee;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);  /* Cria uma caixa de texto com efeito de sombra */
+    z-index: 1;                                         /* Permite que os elementos se sobreponham aos restantes elementos da página */
+    color: black;
+}
+
+/* Propriedades comuns às hiperligações do elemento 'dropbtn-content', que surgem durante o 'hover' dos botões de seleção de projeto e idioma */
+
+.dropbtn-content a {
+    float: none;
+    color: black;
+    padding: 12px 15px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+    font-size: 1em;
+}
+
+/* Cor de fundo das hiperligações muda durante o 'hover' das mesmas */
+
+.dropbtn-content a:hover {
+    background-color: #ddd;
+}
+
+/* Permite que os projetos e idiomas surjam durante o 'hover' dos respetivos botões */
+
+.lang-selector:hover .dropbtn-content,
+.arduino-project-selector:hover .dropbtn-content {
+    display: block;
+}
+
+/* Remove 'padding' da hiperligação associada ao botão de seleção de projetos */
+
+.arduino-project-selector .dropbtn a {
+    padding: 0;
+}
+
+/*************** Fim da caracterização da barra de navegação ***************/
+
+/*************** Propriedades dos diferentes tipos de 'media' ***************/
+
+/* Permite centrar as imagens */
+
+.centered_image {
+    display: block;
+    text-align: center;
+}
+
+/* Propriedades de múltiplas imagens dispostas de forma sucessiva */
+.multiple_image img{
+    height: 300px; 
+    margin-left:20px;
+}
+
+/* Permite definir uma moldura em torno das imagens */
+
+.image_border {
+    border: 1px solid black;
+}
+/* Permite centrar os vídeos */
+
+.centered_video {
+    display: block;
+    text-align: center;
+}
+
+/* Permite definir uma moldura em torno dos vídeos */
+
+.centered_video iframe{
+    width: 480px;
+    height: 360px;
+}
+
+/* Legenda das imagens/videos/tabelas/etc*/
+
+.caption {
+    display: block;
+    font-size: 15px;
+    font-style: italic;
+    text-align: center;
+}
+
+/*************** Fim das propriedades dos diferentes tipos de 'media' ***************/
+
+/*************** Propriedades comuns às diferentes páginas ***************/
+
+/* Propriedades do textos que compõem as páginas */
+
+.main_text {
+    text-align: justify;
+    font-size: 1.1em;
+
+    /* Permite espaçar o texto das margens da página */
+    padding-left: 150px;
+    padding-right: 150px;
+}
+
+/* Remove sublinhado e coloca a preto as hiperligações */
+
+.main_text a {
+    text-decoration: none;
+    color: black;
+}
+
+/* Títulos */
+
+/* Títulos das páginas */
+
+h1.page_title {
+    text-align: center;
+    color: #8c2d19;
+    text-shadow: 1px 1px black;
+    padding-top: 15px;
+}
+
+/* Subtítulos das páginas */
+
+h2.page_subtitle {
+    text-align: center;
+    font-weight: bold;
+    font-size: 25px;
+}
+
+/*************** Fim das propriedades comuns às diferentes páginas ***************/
+
+/*************** Propriedades específicas de certas páginas ***************/
+
+/****** Homepage ******/
+
+.page_list {
+    text-align: center;
+}
+
+.page_list p,
+.page_list a{
+    color: #8c2d19;
+    font-weight: bold;
+}
+
+
+/****** Página de lista de projetos arduino ******/
+
+/* Lista de projetos */
+
+.proj_list {
+    text-align: center;
+}
+
+.proj_list a {
+    color: #8c2d19;
+    font-weight: bold;
+}
+
+/* Muda a cor das hiperligações durante 'hover' */
+
+.proj_list a:hover {
+    color: black;
+}
+
+/****** Fim da página de lista de projetos arduino ******/
+
+/****** Páginas dos projetos (#1, #2, etc.) ******/
+
+/* Indice das páginas dos projetos */
+
+.index p {
+    font-weight: 700;
+    font-size: 23px;
+}
+
+.index ol li,
+.index ol li a {
+    color: #8c2d19;
+    font-size: 21px;
+    font-weight: 700;
+}
+
+.index ol ul li,
+.index ol ul li a {
+    color: rgb(42, 71, 165);
+    font-size: 18px;
+    font-weight: 700;
+}
+
+/* Títulos das secções */
+
+.section_title {
+    text-align: center;
+    font-weight: 700;
+    font-size: 23px;
+    color: #8c2d19;
+}
+
+/* Títulos das subsecções */
+
+.subsection_title {
+    font-weight: 700;
+    padding-left: 2em;
+    font-size: 21px;
+}
+
+/* Propriedades dos botões que permitem mostrar/esconder o código */
+
+button {
+    font-family: "Calibri";
+    font-size: 15px;
+}
+
+/* Propriedades do objecto que contém os ficheiros de código apresentados */
+
+.codigo {
+    text-align: center;
+    width: 100%;
+}
+
+/* Propriedades da moldura que contém os ficheiros de código apresentados */
+
+.codigo iframe {
+    width: 800px;
+    height: 300px;
+}
+
+/* Referência na qual me baseei para o projeto */
+.proj_source {
+    text-align: center;
+}
+
+/* Linha separadora de secções */
+
+hr.section_break {
+    border: 0;
+    height: 0;
+    box-shadow: 0 0 10px 1px black;
+}
+
+/* Permite homogeneizar as imagens utilizadas na lista de material utilizado */
+.material img {
+    height: 150px;
+}
+
+/* Tabelas */
+
+.decoding_table table {
+    border-collapse: collapse;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+.decoding_table td,
+.decoding_table th {
+    border: 0.75pt solid #000000;
+    text-align: center;
+}
+
+.decoding_table th {
+    font-size: 12pt;
+    color: #4472c4;
+    font-weight: bold;
+}
+
+.decoding_table .button_name,
+.timeline,
+.company_name{
+    font-weight: bold;
+    width: 150px;
+}
+
+.description{
+    width: 1200px;
+}
+
+.working_experience_table table,
+.education_table table{
+    border-collapse: collapse;
+}
+
+.working_experience_table th,
+.education_table th{
+    font-weight: bold;
+    font-size: 20px;
+    border-bottom: 3px solid black;
+}
+
+.working_experience_table table td,
+.education_table table td{
+    border-bottom: 1px solid black;
+    vertical-align: top;
+    text-align: left;
+    padding-right: 10px;
+}
+
+.icones {
+    text-align: center;
+    font-size: 3em;
+}
+
+.icones i {
+    color: black;
+}
+
+/****** Fim das páginas dos projetos (#1, #2, etc.) ******/
+
+/* Propriedades do footer (ícones presentes na 'homepage') */
+
+/* O footer tem uma posição fixa no canto inferior direito, que acompanha a página durante o 'scroll' */
+footer {
+    position: fixed;
+    right: 30px;
+    bottom: 20px;
+    width: 100%;
+    color: white;
+    text-align: center;
+    z-index: 1;
+}
+
+
+/* Footer caption */
+
+footer .footer-caption p {
+    color: black;
+    font-size: 14px;
+    margin: 0;
+    margin-top: 5px;
+    text-align: center;
+}
+
+footer .footer-icons {
+    float: right;
+    margin-top: 6px;
+    max-width: 300px;
+}
+
+footer .footer-icons a {
+    display: inline-block;
+    width: 35px;
+    height: 35px;
+    background-color: black;
+    border-radius: 2px;
+    font-size: 20px;
+    color: white;
+    text-align: center;
+    line-height: 35px;
+    margin-left: 3px;
+}

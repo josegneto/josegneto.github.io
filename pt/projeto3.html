@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="pt">
+   <body>
+      <head>
+         <title>Projeto #3</title>
+         <meta charset="utf-8" />
+         <meta http-equiv="X-UA-Compatible" content="IE=edge">
+         <link rel="stylesheet" type="text/css" href="main.css">
+         <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"/>
+         <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+         <!--SCRIPTS-->
+         <!--Botao hide-->
+         <script>
+            function mostra() {
+                var x = document.getElementById("code");
+                if (x.style.display === "none") {
+                    x.style.display = "block";
+                } else {
+                    x.style.display = "none";
+                }
+            }
+         </script>
+         <script>
+                function mostrateste() {
+                    var x = document.getElementById("codeteste");
+                    if (x.style.display === "none") {
+                        x.style.display = "block";
+                    } else {
+                        x.style.display = "none";
+                    }
+                }
+             </script>
+      </head>
+      <!--NAV BAR-->
+      <div class="nav">
+         <ul>
+            <li class="home"><a class="active" href="index.html">Home</a></li>
+            <li class="tutorials"><a class="active" href="arduino.html">Arduino</a>
+            <li class="about"> <a class="active" href="about.html">Sobre</a></li>
+            <li class="contact"><a class="active" href="contacto.html">Contacto</a></li>
+         </ul>
+      </div>
+      <!--TEXTO-->
+      <div style="text-align: center" class="projetos">
+         <h1 class="h1">Projeto #3</h1>
+         <h2 class="h2"><strong>Matriz 8x8</strong> </h2>
+
+         <img src="projeto3\imagens\final.gif" alt="animated" />
+      </div>
+      <div class="proj">
+         <p style="font-weight: 700; font-size: 23px">Índice</p>
+         <ol>
+            <li><a href="#objetivo">Objetivo</a></li>             
+            <li><a href="#material">Material</a></li>
+            <li><a href="#montagem">Montagem</a></li>
+            <li><a href="#jogo">Jogo da memória</a></li>
+            <li><a href="#simulacao">Simulação</a></li>
+
+         </ol>
+         <p style="padding-left: 6em">Baseei-me num projeto para realizar este <i>guide</i>: <a href="https://randomnerdtutorials.com/teensy-arduino-memory-game/" title="Teensy/Arduino – Memory Game"  target="_blank"><i>Teensy/Arduino – Memory Game</i></a>.</p>
+         <hr class="style1">
+         <br>
+         <p id="objetivo" style="text-align:center; font-weight: 700; font-size: 23px; color: #8c2d19">1. Objetivo</p>
+
+         <p style="padding-left: 6em">Neste projeto utilizaremos uma matriz LED 8x8 e programamo-la de forma a acender os LEDs que escolhermos.
+            <br>As possibilidades de trabalho que a matriz possibilita são inúmeras: 
+            <ul style="padding-left: 15em">
+                <li>Enviar inputs para o Arduino através de um teclado e a matriz apresenta os caracteres recebidos;</li>
+                <li>Definir sequências que a matriz exibirá repetidamente;</li>
+                <!--<li>;</li>
+                <li>;</li>-->
+
+            </ul>
+            <!--<br>Devido à simplicidade, este projeto não apresenta dificuldades a apontar.</p>-->
+         <br>
+         <hr class="style1">
+         <br>
+         <p id="material" style="text-align:center; font-weight: 700; font-size: 23px; color: #8c2d19">2. Material</p>
+         <div style="text-align: center">
+            <a href="projeto3\imagens\matrix.jpg" title="Matriz"  target="_blank"><img src="projeto3\imagens\matrix.jpg" style="width: 230px" alt="Matriz"/></a>
+            <a href="projeto3\imagens\arduinouno.png" title="Arduino UNO"  target="_blank"><img src="projeto3\imagens\arduinouno.png" style="width: 200px" alt="Arduino UNO"/></a>
+            <br>
+            <a href="projeto3\imagens\breadboard.jpg" title="Breadboard"  target="_blank"><img src="projeto3\imagens\breadboard.jpg" style="height: 180px" alt="Breadboard"/></a>
+            <a href="projeto3\imagens\fios.jpg" title="Fios"  target="_blank"><img src="projeto3\imagens\fios.jpg" style="height: 150px" alt="Fios"/></a>
+
+            <figcaption><i>Em cima: <strong>Botão </strong>(x4) e <strong>Arduino Uno</strong>.</i></figcaption>
+            <figcaption><i>Em baixo: <strong>Breadboard</strong> (tive de complementar com a mini porque a minha breadboard é pequena) e <strong>fios</strong>.</i></figcaption>
+         </div>
+         <br>
+         <hr class="style1">
+         <br>
+         <p id="montagem"style="font-weight: 700; text-align: center; font-size: 23px; color:#8c2d19">3. Montagem</p>
+         
+         <br>
+         <div class="Imagenscentro">
+            <a href="projeto3\jogodamemoria_montagem.png" title="jogodamemoria_montagem"  target="_blank"><img src="projeto3\jogodamemoria_montagem.png" style="height: 300px; margin-right:20px" alt="jogodamemoria_montagem"/></a>
+            <a href="projeto3\montagem.jpg" title="montagem"  target="_blank"><img src="projeto3\montagem.jpg" style="height: 300px; margin-left:20px" alt="montagem"/></a>
+         </div>
+         <br>
+         <p style="padding-left: 6em"><a href="projeto3\jogodamemoria_Sketch.fzz" title="jogodamemoria_Sketch"  target="_blank">Download</a> do Sketch na imagem (Fritzing).</p>
+        
+       
+         
+         <p style="padding-left: 6em">Chamo a atenção de que o material deve ser testado previamente para ser mais fácil interpretar erros que surjam.
+         <br>
+        Para testar o material utilizei o código abaixo, que inicialmente acende todos os LEDs para verificar que todos funcionam corretamente. Dois segundos depois, apaga-os. De seguida, é possível testar cada um dos botões e verificar se acende o respetivo LED.</p>
+       <br>        
+
+       <div style ="padding-left: 6em" class="botao">
+            <button onclick="mostrateste()">Mostrar/Esconder código</button>
+         </div>
+         <br>
+         <div id="codeteste">
+            <div class ="codigo">
+               <iframe src="projeto3\teste_botoes_leds\teste_botoes_leds.htm" type="text/octet-stream" width="800" style="height: 300px   "></iframe>
+            </div>
+            <div class ="icones">
+               <a href="projeto3\teste_botoes_leds\teste_botoes_leds.ino" title="teste_botoes_leds.ino" target="_blank"><i class="fas fa-file-download" aria-hidden="true" alt="teste_botoes_leds.ino"></i></a>
+            </div>
+            <div class="legenda">
+               <p><strong>teste_botoes_leds.ino</strong><br>Download do ficheiro</p>
+            </div>
+         </div>
+         
+
+         <hr class="style1">
+         <br>
+         <p id="jogo" style="text-align: center; font-weight: 700; font-size: 23px; color:#8c2d19">4. Jogo da memória</p>
+         
+         <p style="padding-left: 6em">O código que utlizei está apresentado abaixo.</p><br>
+
+
+         <div style ="padding-left: 6em" class="botao">
+            <button onclick="mostra()">Mostrar/Esconder código</button>
+         </div>
+         <br>
+         <div id="code">
+            <div class ="codigo">
+               <iframe src="projeto3\jogodamemoria\jogodamemoria.html" type="text/octet-stream" width="800" style="height: 300px   "></iframe>
+            </div>
+            <div class ="icones">
+               <a href="projeto3\jogodamemoria\jogodamemoria.ino" title="jogodamemoria.ino" target="_blank"><i class="fas fa-file-download" aria-hidden="true" alt="jogodamemoria.ino"></i></a>
+            </div>
+            <div class="legenda">
+               <p><strong>jogodamemoria.ino</strong><br>Download do ficheiro</p>
+            </div>
+         </div>
+         <hr class="style1">
+        <br>
+         <p id="simulacao" style="text-align: center; font-weight: 700; font-size: 23px; color:#8c2d19">5. Simulação</p>
+         <p style="padding-left: 6em">Na simulação cheguei até ao nível 4, mas premi o botão errado e perdi.<br><br></p>
+         <div style="text-align: center">
+            <iframe width="480" height="360" src="https://www.youtube.com/embed/zRZKroVg4ZI"></iframe>
+           
+        </div>
+        <br><br>
+      </div>
+   </body>
+</html>

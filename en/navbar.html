@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        .navbar {
+            overflow: hidden;
+            background-color: #8c2d19;
+            color: #fff;
+        }
+        
+        .navbar a {
+            float: left;
+            font-size: 20px;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+        /* Active page has different properties */
+        
+        .navbar a.active {
+            color: black;
+            font-weight: bold;
+        }
+        /* Language Selector */
+        
+        .dropbtn a {
+            overflow: hidden;
+        }
+        
+        .lang-selector {
+            float: right;
+            overflow: hidden;
+        }
+        
+        .arduino-project_selector {
+            float: left;
+            overflow: hidden;
+        }
+        
+        .lang-selector .dropbtn {
+            font-size: 20px;
+            border: none;
+            outline: none;
+            color: white;
+            padding: 14px 16px;
+            background-color: inherit;
+            font-family: inherit;
+            margin: 0;
+        }
+        
+        .arduino-project_selector .dropbtn {
+            font-size: 20px;
+            border: none;
+            outline: none;
+            color: white;
+            padding: 14px 16px;
+            background-color: inherit;
+            font-family: inherit;
+            margin: 0;
+        }
+        
+        .navbar a:hover,
+        .lang-selector:hover .dropbtn,
+        .arduino-project_selector:hover .dropbtn {
+            background-color: black;
+            color: white;
+        }
+        
+        .dropbtn-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+        
+        .dropbtn-content a {
+            float: none;
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+        }
+        
+        .dropbtn-content a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+        
+        .lang-selector:hover .dropbtn-content,
+        .arduino-project_selector:hover .dropbtn-content {
+            display: block;
+        }
+        
+        .arduino-project_selector .dropbtn a {
+            padding: 0;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <div class="navbar">
+        <a class="active" href="index.html">Home</a>
+        <div class="arduino-project_selector">
+            <button class="dropbtn">      <a href="arduino.html">Projetos <i class="fa fa-caret-down"></i></a></button>
+            <div class="dropbtn-content">
+                <a href="../pt/index.html"> Projeto 1</a>
+            </div>
+        </div>
+
+
+        <a href="about.html">Sobre</a>
+        <a href="contacto.html">Contacto</a>
+
+        <div class="lang-selector">
+            <button class="dropbtn">Language <i class="fa fa-caret-down"></i></button>
+            <div class="dropbtn-content">
+                <a href="../pt/index.html"><img class="flag" src="https://lipis.github.io/flag-icon-css/flags/4x3/pt.svg" alt="Portugal Flag" width="20"> PT</a>
+            </div>
+        </div>
+    </div>
+
+    <h3>Dropdown Menu inside a Navigation Bar</h3>
+    <p>Hover over the "Dropdown" link to see the dropdown menu.</p>
+
+</body>
+
+</html>
