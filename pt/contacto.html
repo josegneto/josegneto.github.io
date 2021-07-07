@@ -1,46 +1,47 @@
 <!DOCTYPE html>
 <html lang="pt">
-  <body>
-    <head>
+   <head>
+      <link rel="shortcut icon" href="../imgrandom/favicon.ico">
       <title>Contacto</title>
-
       <meta charset="utf-8" />
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
-      
       <link rel="stylesheet" type="text/css" href="main.css">
-      <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"/>
-      <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
-      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
-
-    </head>
-
-    <!--NAV BAR-->
-  
-    <div class="nav">
-        <ul>
-            <li class="home"><a class="active" href="index.html">Home</a></li>
-            <li class="tutorials"><a class="active" href="arduino.html">Arduino</a>          
-            <li class="about"> <a class="active" href="about.html">Sobre</a></li>
-            <li class="contact"><a class="active" href="contacto.html">Contacto</a></li>
-        </ul>
-    </div>
-
-    <!--TEXTO-->
-      
-    <div class ="lcontactos">
-      <h1 class="h1">Lista de contactos</h1>
-          
-    </div>
-      
-    <div class ="icones">
-        
-      <a href="https://www.linkedin.com/in/josé-neto-22381b168/" title="Linkedin" target="_blank"><i class="fab fa-linkedin-in" aria-hidden="true" alt="Linkedin"></i></a>
-      <a href="https://github.com/josegneto" title="GitHub" target="_blank"><i class="fab fa-github" alt="GitHub"></i></a>
-      <a href="mailto:up201603192@fe.up.pt" title="up201603192@fe.up.pt" target="_blank"><i class="far fa-envelope" alt="up201603192@fe.up.pt"></i></a>
-      <a href="https://drive.google.com/file/d/1nuCBD2zMkR7J3u_BcXcZfI36CzVY1SQF/" title="CV" target="_blank"><i class="far fa-address-card" alt="CV"></i></a>
-      
-    </div>
-
-  </body>
-    
+      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css">
+   </head>
+   <!--NAV BAR-->
+   <div class="navbar">
+      <a href="index.html">Início</a>
+      <div class="arduino-project-selector">
+         <button class="dropbtn"> <a href="arduino.html">Projetos <i class="fa fa-caret-down"></i></a></button>
+         <div class="dropbtn-content">
+            <a href="projeto1.html" title="Projeto #1: Controlar um motor servo com um comando de infravermelhos"><strong>Projeto #1</strong> <br><i>Controlar um motor servo com um comando de infravermelhos</i></a>
+            <a href="projeto2.html" title="Projeto #2: Jogo da memória"><strong>Projeto #2</strong><br> <i>Jogo da memória</i></a>
+            <a title="Projeto #3: Matriz 8x8 (em construção)"><strong>Projeto #3</strong><br> <i>Matriz 8x8 (em construção)</i></a>
+         </div>
+      </div>
+      <a href="about.html">Sobre</a>
+      <a class="active" href="contacto.html">Contacto</a>
+      <div class="lang-selector">
+         <button class="dropbtn">Idioma <i class="fa fa-caret-down"></i></button>
+         <div class="dropbtn-content">
+            <a href="../en/contacto.html">
+               <div class="bold_text"><img class="flag" src="https://lipis.github.io/flag-icon-css/flags/4x3/gb.svg" alt="GB Flag" width="20"><br>English (UK)</div>
+            </a>
+         </div>
+      </div>
+   </div>
+   <!--Body of Text-->
+   <body>
+      <h1 class="page_title">Lista de contactos</h1>
+      <div class="main_text">
+      <div class="icones">
+         <a href="../entregaveis/SIEM_Mockup_JoseNeto.pptx" title="Download Mockup" target="_blank"><i class="far fa-file-powerpoint" aria-hidden="true" alt="Download Mockup"></i></a>
+         <a href="../entregaveis/HTML.zip" title="Download HTML (Zip)" target="_blank"><i class="far fa-file-archive" aria-hidden="true" alt="Download HTML (Zip)"></i></a>
+         <a href="../entregaveis/main.css" title="Download CSS" target="_blank"><i class="far fa-file-code" aria-hidden="true" alt="Download CSS"></i></a>
+         <a href="https://www.linkedin.com/in/josé-neto-22381b168/" title="Linkedin" target="_blank"><i class="fab fa-linkedin-in" aria-hidden="true" alt="Linkedin"></i></a>
+         <a href="https://github.com/josegneto" title="GitHub" target="_blank"><i class="fab fa-github" alt="GitHub"></i></a>
+         <a href="mailto:up201603192@fe.up.pt" title="up201603192@fe.up.pt" target="_blank"><i class="far fa-envelope" alt="up201603192@fe.up.pt"></i></a>
+         <a href="https://drive.google.com/file/d/1nuCBD2zMkR7J3u_BcXcZfI36CzVY1SQF/" title="CV" target="_blank"><i class="far fa-address-card" alt="CV"></i></a>
+      </div>
+   </body>
 </html>

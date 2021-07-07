@@ -1,80 +1,73 @@
 <!DOCTYPE html>
 <html lang="pt">
-
-<head>
-
-    <link rel="shortcut icon" href="../imgrandom/favicon.ico">
-
-    <title>Início</title>
-
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-
-
-
-    <link rel="stylesheet" type="text/css" href="main.css">
-    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
-    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
-
-
-
-</head>
-
-<!--NAV BAR-->
-
-<body>
-
-    <div class="nav">
-        <ul>
-            <li class="home"><a class="active" href="index.html">Home</a></li>
-            <li class="tutorials"><a class="active" href="arduino.html">Arduino</a></li>
-            <li class="about"> <a class="active" href="about.html">Sobre</a></li>
-            <li class="contact"><a class="active" href="contacto.html">Contacto</a></li>
-            <div class="dropdown">
-                <button class="dropbtn">Language 
-                <i class="fa fa-caret-down"></i>
-              </button>
-                <div class="dropdown-content">
-                    <a href="../en/index.html"><img class="flag" src="https://lipis.github.io/flag-icon-css/flags/4x3/gb.svg" alt="GB Flag" width="20"> English (UK)</a>
-                </div>
+   <head>
+      <link rel="shortcut icon" href="../imgrandom/favicon.ico">
+      <title>Início</title>
+      <meta charset="utf-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <link rel="stylesheet" type="text/css" href="main.css">
+      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css">
+   </head>
+   <!--NAV BAR-->
+   <div class="navbar">
+      <a class="active" href="index.html">Início</a>
+      <div class="arduino-project-selector">
+         <button class="dropbtn"> <a href="arduino.html">Projetos <i class="fa fa-caret-down"></i></a></button>
+         <div class="dropbtn-content">
+            <a href="projeto1.html" title="Projeto #1: Controlar um motor servo com um comando de infravermelhos"><span class="bold_text">Projeto #1</span><br><i>Controlar um motor servo com um comando de infravermelhos</i></a>
+            <a href="projeto2.html" title="Projeto #2: Jogo da memória"><span class="bold_text">Projeto #2</span><br> <i>Jogo da memória</i></a>
+            <a title="Projeto #3: Matriz 8x8 (em construção)"><span class="bold_text">Projeto #3</span><br> <i>Matriz 8x8 (em construção)</i></a>
+         </div>
+      </div>
+      <a href="about.html">Sobre</a>
+      <a href="contacto.html">Contacto</a>
+      <div class="lang-selector">
+         <button class="dropbtn">Idioma <i class="fa fa-caret-down"></i></button>
+         <div class="dropbtn-content">
+            <a href="../en/index.html">
+               <div class="bold_text"><img class="flag" src="https://lipis.github.io/flag-icon-css/flags/4x3/gb.svg" alt="GB Flag" width="20"><br>English (UK)</div>
+            </a>
+         </div>
+      </div>
+   </div>
+   <!--Body of Text-->
+   <body>
+      <h1 class="page_title">José Neto</h1>
+      <div class="main_text">
+         <div class="centered_image">
+            <a href="https://sigarra.up.pt/feup/pt/fest_geral.cursos_list?pv_num_unico=201603192" title="Sigarra" target="_blank"><img src="../imgrandom/201603192.jpg" class="image_border"  alt="Sigarra"></a>
+            <div class="caption">
+               Clicar na imagem para ser redirecionado<br>para a minha página de estudante do Sigarra
             </div>
-        </ul>
-    </div>
-
-    <!--TEXTO-->
-    <h1 class="h1">José Neto</h1>
-    <div class="inicio">
-
-
-        <p>Este site é um projeto pessoal iniciado numa pausa lectiva.
-            <br>Inicialmente, a ideia era apresentar algumas informações acerca das minhas habilitações, funcionando como uma alternativa a outras ferramentas como o<i> Linkedin</i> ou o CV.</p>
-        <p>Como adquiri um gosto por Arduino, decidi incorporar aqui alguns projetos que vou fazendo nos tempos livres. Por um lado, coloco em prática alguns conhecimentos de <i>HTML</i> e <i>CSS</i> que fui reunindo, por outro exercito conhecimentos desenvolvidos
-            em cadeiras na faculdade. </p>
-    </div>
-    <br>
-    <div class="Imagenscentro">
-        <a href="https://sigarra.up.pt/feup/pt/fest_geral.cursos_list?pv_num_unico=201603192" title="Sigarra" target="_blank"><img src="../imgrandom/201603192.jpg" class="imagemborda" alt="Sigarra" /></a>
-    </div>
-    <div class="legenda">
-        <p>Clicar na imagem para ser redirecionado<br>para a minha página de estudante do Sigarra</p>
-    </div>
-</body>
-<footer class="footer-distributed">
-
-    <div class="footer-right">
-
-        <a href="https://www.linkedin.com/in/josé-neto-22381b168/" title="Linkedin" target="_blank"><i class="fab fa-linkedin-in" aria-hidden="true" alt="Linkedin"></i></a>
-        <a href="https://github.com/josegneto" title="GitHub" target="_blank"><i class="fab fa-github" alt="GitHub"></i></a>
-        <a href="mailto:up201603192@fe.up.pt" title="up201603192@fe.up.pt" target="_blank"><i class="far fa-envelope" alt="up201603192@fe.up.pt"></i></a>
-        <a href="https://drive.google.com/open?id=1M2oINLEbG2lrbKXSke19VA43tsz9cSvo" title="CV" target="_blank"><i class="far fa-address-card" alt="CV"></i></a>
-
-        <div class="footer-left">
-            <p>José Neto &copy; 2020</p>
-        </div>
-
-    </div>
-
-</footer>
-
+         </div>
+         <p>Este website foi desenvolvido no contexto do primeiro trabalho prático de Sistemas de Informação Empresariais.</p>
+         <p>Nesta <i>homepage</i> irei descrever o funcionamento do <i>website</i>, nomeadamente a sua estrutura e organização. Está disponível a funcionalidade de seleção de idioma, ainda que apenas a <i>homepage</i> tenha sido traduzida.</p>
+         <p>Como adquiri um gosto por Arduino, decidi incorporar aqui alguns projetos que vou realizando nos tempos livres.</p>
+         <h2><i>Entregáveis do projeto</i></h2>
+         <p>Os entregáveis do projeto estão disponíveis na página de <a href="contacto.html">contactos</a>, assim como no <i>footer</i> no canto inferior direito desta página.</p>
+         <h2><i>Estrutura e organização</i></h2>
+         <p>A organização <i>website</i> está descrita na barra de navegação, sendo que existem cinco tipos de páginas:</p>
+         <div class="page_list">
+            <p><i><a href="index.html">Homepage</a></i></p>
+            <p><a href="arduino.html">Lista de Projetos</a></p>
+            <p>Página de cada Projeto</p>
+            <p><a href="about.html">Informação pessoal</a></p>
+            <p><a href="contacto.html">Contactos</a></p>
+         </div>
+      </div>
+   </body>
+   <footer>
+      <div class="footer-icons">
+         <a href="../entregaveis/SIEM_Mockup_JoseNeto.pptx" title="Download Mockup" target="_blank"><i class="fas fa-file-powerpoint" aria-hidden="true" alt="Download Mockup"></i></a>
+         <a href="../entregaveis/HTML.zip" title="Download HTML (Zip)" target="_blank"><i class="fas fa-file-archive" aria-hidden="true" alt="Download HTML (Zip)"></i></a>
+         <a href="../entregaveis/main.css" title="Download CSS" target="_blank"><i class="fas fa-file-code" aria-hidden="true" alt="Download CSS"></i></a>
+         <a href="https://www.linkedin.com/in/josé-neto-22381b168/" title="Linkedin" target="_blank"><i class="fab fa-linkedin-in" aria-hidden="true" alt="Linkedin"></i></a>
+         <a href="https://github.com/josegneto" title="GitHub" target="_blank"><i class="fab fa-github" alt="GitHub"></i></a>
+         <a href="mailto:up201603192@fe.up.pt" title="up201603192@fe.up.pt" target="_blank"><i class="far fa-envelope" alt="up201603192@fe.up.pt"></i></a>
+         <a href="https://drive.google.com/file/d/1nuCBD2zMkR7J3u_BcXcZfI36CzVY1SQF/" title="CV" target="_blank"><i class="far fa-address-card" alt="CV"></i></a>
+         <div class="footer-caption">
+            <p>José Neto &copy; 2020<br>up201603192@fe.up.pt</p>
+         </div>
+      </div>
+   </footer>
 </html>
