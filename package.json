@@ -29,6 +29,9 @@
     "gulp-wait": "0.0.2"
   },
   "dependencies": {
-    "glob-parent": "^6.0.2"
+    "glob-parent": "^6.0.2",
+    "lodash": "^1.0.2",
+    "lodash.template": "^3.6.2",
+    "minimatch": "^2.0.10"
   }
 }
