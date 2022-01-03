@@ -19,7 +19,7 @@
   "devDependencies": {
     "@babel/core": "^7.9.0",
     "@babel/preset-env": "^7.9.0",
-    "gulp": "^4.0.2",
+    "gulp": "^3.9.1",
     "gulp-autoprefixer": "^6.1.0",
     "gulp-babel": "^8.0.0",
     "gulp-plumber": "^1.2.1",
@@ -27,5 +27,8 @@
     "gulp-sass": "^5.0.0",
     "gulp-uglify": "^3.0.2",
     "gulp-wait": "0.0.2"
+  },
+  "dependencies": {
+    "glob-parent": "^6.0.2"
   }
 }
