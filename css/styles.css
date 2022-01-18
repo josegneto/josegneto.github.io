@@ -541,7 +541,7 @@ footer {
 }
 
 .project-image {
-	float: left
+	float: left;
 }
 
 .project-info {
@@ -559,11 +559,12 @@ footer {
 	margin: 0 0 15px 0
 }
 
-.project-info p {
+.project-info p{
 	color: #74808a;
 	margin: 0 0 15px 0;
 	font-size: 0.9em
 }
+
 
 .no-image .project-info {
 	position: relative;
